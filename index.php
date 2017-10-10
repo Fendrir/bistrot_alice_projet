@@ -13,3 +13,9 @@ $content = ob_get_clean();
 include('template/default.php');
 
 ?>
+
+<?php
+include('template/header.php');
+include('template/content_index.php');
+include('template/footer.php');
+?>
