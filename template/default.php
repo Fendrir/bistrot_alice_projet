@@ -13,36 +13,19 @@
 </head>
 <body>
 
-<?php
 
-    $boutons ="";
+<div class="container">
 
-  if(!empty($_SESSION['nick'])){
+    <?php include('bouton_nav.php') ?>
 
-    $boutons = '<li><button class="btn">Gérer</button></li>
-                <li><button class="btn">Se déconnecter</button></li>';
+    <?php echo $content; ?>
 
-  }
+    </div> <!-- correspond à la fin de la div du row des boutons nav_bar -->
 
-?>
-
-<ul class="list-unstyled">
-    <li>Accueil</li>
-    <li>Contact</li>
-    <li>
-        <ul class="list-inline">
-            <li>Fb</li>
-            <li>Twitter</li>
-            <li>Trip</li>
-            <li><a href="?p=connexion">Connexion</a></li>
-        </ul>
-    <?php echo $boutons;
-    var_dump($_SESSION['nick']); ?>
-</ul>
+</div>
 
 
 
-<?php echo $content; ?>
 
 <script src="../bistrot_alice_projet/node_modules/jquery/dist/jquery.js"></script>
 <script src="../bistrot_alice_projet/node_modules/bootstrap/dist/js/bootstrap.js"></script>
