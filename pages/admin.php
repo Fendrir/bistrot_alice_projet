@@ -7,12 +7,14 @@ $nick = $row[0];
 $pwd = $row[1];
 $nickPost = $_POST['nick'];
 
-if ($nickPost === $nick && password_verify($_POST['pwd'], $pwd)) {
-    $_SESSION['nick'] = $nick;
-    echo 'lolol';
+if($_SESSION['nick'] === 'Franck'){
+} else if ($nickPost === $nick && password_verify($_POST['pwd'], $pwd)) {
+    ?>
+    <meta http-equiv="refresh" content="5; URL=?p=administration">
+    <?php  $_SESSION['nick'] = $nick;
 } else {
     ?>
     <meta http-equiv="refresh" content="5; URL=?p=connexion">
-    <? echo "connection failed";
+    <?php echo "connection failed";
 }
 ?>

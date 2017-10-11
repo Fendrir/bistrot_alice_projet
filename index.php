@@ -18,6 +18,9 @@ if($p === 'connexion'){
 if($p === 'admin'){
     include('pages/admin.php');
 }
+if($p === 'administration'){
+    include('pages/administration.php');
+}
 if($p === 'deconnexion'){
     include('pages/deconnexion.php');
 }
