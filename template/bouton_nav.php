@@ -13,13 +13,15 @@
 
 
 
-    <div class="row">
+    <div class="row justify-content-center">
 
         <div class="col-md-3">
 
             <ul class="list-unstyled">
-                <li><a href="?p=home">Accueil</a></li>
+                <li><img class="img-fluid" src="../bistrot_alice_projet/images_bistrot/logo.png" alt="logo Bistro" sizes="" srcset=""></li>
+               <li><a href="?p=home">Accueil</a></li>
                 <li><a href="?p=contact">Contact</a></li>
+
                 <li>
                     <ul class="list-inline">
                         <li>Fb</li>
