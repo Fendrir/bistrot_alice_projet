@@ -23,11 +23,20 @@
 
 .taille{
 
-width: 30px;
-height: 33px;
+width: 250px;
+height: auto;
 
 
 }
+
 .fa {
     color: #A22335;
 }
+
+.taille-video{
+
+width: 500px;
+height: auto;
+
+}
+

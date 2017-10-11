@@ -19,8 +19,9 @@
 
             <ul class="list-unstyled">
                 <li><img class="img-fluid" src="../bistrot_alice_projet/images_bistrot/logo.png" alt="logo Bistro" sizes="" srcset=""></li>
-                <li>Accueil</li>
-                <li>Contact</li>
+               <li><a href="?p=home">Accueil</a></li>
+                <li><a href="?p=contact">Contact</a></li>
+
                 <li>
                     <ul class="list-inline">
                         <li>Fb</li>
