@@ -18,8 +18,8 @@
         <div class="col-md-3">
 
             <ul class="list-unstyled">
-                <li>Accueil</li>
-                <li>Contact</li>
+                <li><a href="?p=home">Accueil</a></li>
+                <li><a href="?p=contact">Contact</a></li>
                 <li>
                     <ul class="list-inline">
                         <li>Fb</li>
