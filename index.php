@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 include('database/connect_bdd.php');
 
 if(isset($_GET['p'])){
@@ -18,6 +17,9 @@ if($p === 'connexion'){
 }
 if($p === 'admin'){
     include('pages/admin.php');
+}
+if($p === 'deconnexion'){
+    include('pages/deconnexion.php');
 }
 $content = ob_get_clean();
 include('template/default.php');

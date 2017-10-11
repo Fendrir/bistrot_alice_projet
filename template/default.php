@@ -1,5 +1,3 @@
-<? include('template/bouton_admin.php'); ?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -19,7 +17,7 @@
     <?php include('bouton_nav.php') ?>
 
     <?php echo $content; ?>
-
+    <?php echo $_SESSION['nick']; ?>
     </div> <!-- correspond à la fin de la div du row des boutons nav_bar -->
 
 </div>

@@ -1,14 +1,12 @@
 <?php
-
-    $boutons ="";
-
-  if(!empty($_SESSION['nick'])){
-
+if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
+    $_SESSION['nick'] = 'Invité';
+    $boutons = "";
+}
+if($_SESSION['nick'] === 'Franck'){
     $boutons = '<li><button class="btn">Gérer</button></li>
-                <li><button class="btn">Se déconnecter</button></li>';
-
-  }
-
+                <li><a href="?p=deconnexion"><button class="btn">Se déconnecter</button></a></li>';
+}
 ?>
 
 
@@ -18,7 +16,7 @@
         <div class="col-md-3">
 
             <ul class="list-unstyled">
-                <li>Accueil</li>
+                <li><a href="?p=home">Accueil</a></li>
                 <li>Contact</li>
                 <li>
                     <ul class="list-inline">
