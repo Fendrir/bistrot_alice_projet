@@ -1,4 +1,7 @@
 <?php
+session_start();
+
+include('database/connect_bdd.php');
 
 if(isset($_GET['p'])){
     $p = $_GET['p'];
@@ -19,8 +22,4 @@ if($p === 'admin'){
 $content = ob_get_clean();
 include('template/default.php');
 
-?>
-
-<?php
-var_dump($_SESSION['nick']);
 ?>
