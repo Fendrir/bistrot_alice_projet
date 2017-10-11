@@ -13,6 +13,6 @@ if ($nickPost === $nick && password_verify($_POST['pwd'], $pwd)) {
 } else {
     ?>
     <meta http-equiv="refresh" content="5; URL=?p=connexion">
-    <? echo "connection fail";
+    <? echo "connection failed";
 }
 ?>
