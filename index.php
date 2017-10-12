@@ -33,7 +33,10 @@ if($p === 'uploadevent'){
 if($p === 'delete_event'){
     include('pages/delete_event.php');
 }
+if($p === 'contact'){
+    include('pages/contact.php');
+}
 $content = ob_get_clean();
 include('template/default.php');
-
+ 
 ?>
