@@ -11,7 +11,7 @@ if(!empty($_SESSION['nick'])){
 
 ?>
 <div class="row justify-content-center">
-    <div class="col-3">
+    <div class="col-md-3">
         <img class="img-fluid" src="../bistrot_alice_projet/images_bistrot/logo.png" alt="logo Bistro" sizes="" srcset="">
 
         <div class="row justify-content-center">
