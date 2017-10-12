@@ -10,9 +10,9 @@
 /* Large devices (desktops, less than 1200px) */
 @media (max-width: 1199px) { ... }
 
-/* Extra large devices (large desktops) */
-/* No media query since the extra-large breakpoint has no upper bound on its width */
+
 .row [class^="col-"] {    
+
     
     /* background-color: #eee;
     border: 1px solid #ddd;
