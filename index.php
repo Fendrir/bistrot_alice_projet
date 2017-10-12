@@ -24,6 +24,9 @@ if($p === 'administration'){
 if($p === 'deconnexion'){
     include('pages/deconnexion.php');
 }
+if($p === 'upload'){
+    include('pages/upload.php');
+}
 $content = ob_get_clean();
 include('template/default.php');
 

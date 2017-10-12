@@ -4,39 +4,25 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
 
     } else {
 ?>
-    <form action="?p=upload&id=1" method="post" enctype="multipart/form-data">
-        Select image to upload:
-        <input type="file" name="fileToUpload" id="fileToUpload">
-        <input type="submit" value="Upload Image" name="submit">
+    <form method="post" action="?p=upload&id=2" enctype="multipart/form-data">
+        <label for="mon_fichier">Fichier (tous formats | max. 1 Mo) :</label><br />
+        <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
+        <input type="file" name="image" id="mon_fichier" /><br />
+        <label for="titre">Titre du fichier (max. 50 caractères) :</label><br />
+        <input type="text" name="titre" id="titre">
+        <input type="submit" name="submit" value="Envoyer" />
     </form>
-    <form action="?p=upload&id=2" method="post" enctype="multipart/form-data">
-        Select image to upload:
-        <input type="file" name="fileToUpload" id="fileToUpload">
-        <input type="submit" value="Upload Image" name="submit">
-    </form>
-    <form action="?p=upload&id=3" method="post" enctype="multipart/form-data">
-        Select image to upload:
-        <input type="file" name="fileToUpload" id="fileToUpload">
-        <input type="submit" value="Upload Image" name="submit">
-    </form>
+
 <?php
+    $sql = "SELECT car_title, car_img FROM carte WHERE car_oid = '2'";
+    $result = $conn->query($sql);
+
+    while($row = $result->fetch_assoc()){
+        echo $row['car_title'];
+        echo '<img src="'.$row['car_img'].'"/>"';
+
+    }
 }
 ?>
 
-<?php
-$sql = "SELECT car_title, car_img FROM carte WHERE car_oid > 1";
-$result = $conn->query($sql);
 
-while($row = $result->fetch_assoc()){
-    echo $row['car_title'];
-    echo '<img src="'.$row['car_img'].'"/>';
-}
-//$row = $result->fetch_row();
-//
-//$nick = $row[1];
-//$img = $row[2];
-
-var_dump($row[2]);
-echo $nick;
-echo "<img src=".$img."/>";
-?>
