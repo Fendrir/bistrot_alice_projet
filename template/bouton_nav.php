@@ -1,16 +1,17 @@
 <?php
 
-$boutons ="";
-
-if(!empty($_SESSION['nick'])){
-    
-    $boutons = '<li><button class="btn">Gérer</button></li>
-    <li><button class="btn">Se déconnecter</button></li>';
-    
+if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
+    $_SESSION['nick'] = 'Invité';
+    $boutons = "";
+}
+if($_SESSION['nick'] === 'Franck'){
+    $boutons = '<li><a href="?p=administration"><button class="btn">Gérer</button></a></li>
+                <li><a href="?p=deconnexion"><button class="btn">Se déconnecter</button></a></li>';
 }
 
 ?>
 <div class="row justify-content-center">
+
     <div class="col-md-3">
         <img class="img-fluid" src="../bistrot_alice_projet/images_bistrot/logo.png" alt="logo Bistro" sizes="" srcset="">
 
@@ -38,10 +39,9 @@ if(!empty($_SESSION['nick'])){
         </ul>
         
                 
-                <?php echo $boutons;
+
+
+            <?php echo $boutons;
                 var_dump($_SESSION['nick']); ?>
             </ul>
         </div>
-        
-        
-        

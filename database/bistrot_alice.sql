@@ -61,5 +61,5 @@ CREATE TABLE images(
 )ENGINE=InnoDB;
 
 ALTER TABLE carte ADD CONSTRAINT FK_carte_adm_oid FOREIGN KEY (adm_oid) REFERENCES admin(adm_oid);
-ALTER TABLE events ADD CONSTRAINT FK_events_adm_oid FOREIGN KEY (adm_oid) REFERENCES admin(adm_oid);
+ALTER TABLE events_restau ADD CONSTRAINT FK_events_adm_oid FOREIGN KEY (adm_oid) REFERENCES admin(adm_oid);
 ALTER TABLE images ADD CONSTRAINT FK_images_adm_oid FOREIGN KEY (adm_oid) REFERENCES admin(adm_oid);
