@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 include('database/connect_bdd.php');
 
 if(isset($_GET['p'])){
@@ -18,6 +17,21 @@ if($p === 'connexion'){
 }
 if($p === 'admin'){
     include('pages/admin.php');
+}
+if($p === 'administration'){
+    include('pages/administration.php');
+}
+if($p === 'deconnexion'){
+    include('pages/deconnexion.php');
+}
+if($p === 'upload'){
+    include('pages/upload.php');
+}
+if($p === 'uploadevent'){
+    include('pages/uploadevent.php');
+}
+if($p === 'delete_event'){
+    include('pages/delete_event.php');
 }
 if($p === 'contact'){
     include('pages/contact.php');
