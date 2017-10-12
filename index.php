@@ -19,6 +19,9 @@ if($p === 'connexion'){
 if($p === 'admin'){
     include('pages/admin.php');
 }
+if($p === 'contact'){
+    include('pages/contact.php');
+}
 $content = ob_get_clean();
 include('template/default.php');
 
