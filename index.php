@@ -27,6 +27,12 @@ if($p === 'deconnexion'){
 if($p === 'upload'){
     include('pages/upload.php');
 }
+if($p === 'uploadevent'){
+    include('pages/uploadevent.php');
+}
+if($p === 'delete_event'){
+    include('pages/delete_event.php');
+}
 $content = ob_get_clean();
 include('template/default.php');
 
