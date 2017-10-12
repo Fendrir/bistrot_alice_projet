@@ -12,8 +12,7 @@
 
 // Extra large devices (large desktops)
 // No media query since the extra-large breakpoint has no upper bound on its width
-.row [class^="col-"] {
-    
+.row [class^="col-"] {    
     
     background-color: #eee;
     border: 1px solid #ddd;
@@ -39,4 +38,3 @@ width: 500px;
 height: auto;
 
 }
-
