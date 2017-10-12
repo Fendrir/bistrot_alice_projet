@@ -1,7 +1,4 @@
 
-
-
-
 <div class="col-6 card card-body">
 <p class="card-text"><h1>Le Bistrot d'Alice</h1></p>
 <p class="card-text">26 rue Chartrand</p>

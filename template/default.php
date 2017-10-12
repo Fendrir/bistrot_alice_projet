@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> 1e89ab5df39d5cb5dc65b2db99cae2fa935154d5
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,9 +7,7 @@
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.8.0/css/flag-icon.css">
-
 <link rel="stylesheet" href="../bistrot_alice_projet/node_modules/bootstrap/dist/css/bootstrap.css">
 <link rel="stylesheet" href="../bistrot_alice_projet/css/style.css">
 <title>Le Bistrot d'Alice</title>
@@ -35,7 +30,7 @@
 
 <script src="../bistrot_alice_projet/node_modules/jquery/dist/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
-    crossorigin="anonymous"></script>
+crossorigin="anonymous"></script>
 
 <script src="../bistrot_alice_projet/node_modules/bootstrap/dist/js/bootstrap.js"></script>
 <script src="../bistrot_alice_projet/js/app.js"></script>
