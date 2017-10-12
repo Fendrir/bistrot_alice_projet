@@ -29,14 +29,15 @@ height: auto;
 
 }
 
-.fa {
-    color: #A22335;
+.taillevideo{
+    
+    width: 535px;
+    height: 315;
+    
 }
 
-.taille-video{
 
-width: 500px;
-height: auto;
-
+.fa {
+    color: #A22335;
 }
 
