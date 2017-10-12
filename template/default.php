@@ -1,4 +1,3 @@
-<? include('template/bouton_admin.php'); ?>
 
 <!doctype html>
 <html lang="en">
