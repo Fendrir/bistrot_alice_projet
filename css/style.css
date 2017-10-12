@@ -11,8 +11,7 @@
 @media (max-width: 1199px) { ... }
 
 
-.row [class^="col-"] {    
-
+.row [class^="col-"] {   
     
     /* background-color: #eee;
     border: 1px solid #ddd;
@@ -32,10 +31,14 @@ height: auto;
     
     width: 535px;
     height: 315;
-    
+   
 }
 
 
 .fa {
-    color: #A22335;
+    color: #C89EA4;
+}
+
+.img-fluid{
+    width: 100% \9;
 }
