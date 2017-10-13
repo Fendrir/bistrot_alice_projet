@@ -10,7 +10,7 @@ if($_SESSION['nick'] === 'Franck'){
 }
 
 ?>
-<div class="row justify-content-center">
+
 
     <div class="col-md-3">
         <img class="img-fluid" src="../bistrot_alice_projet/images_bistrot/logo.png" alt="logo Bistro" sizes="" srcset="">
@@ -45,3 +45,4 @@ if($_SESSION['nick'] === 'Franck'){
                 var_dump($_SESSION['nick']); ?>
             </ul>
         </div>
+

@@ -58,7 +58,7 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {       //Si le 
 
                 <?php       //Mise à jour de la DB
                 $titre = $_POST['titre'];
-                $sql2 = "UPDATE events_restau SET eve_title = '$titre', eve_img = '$pathDB' WHERE eve_oid = '" . $id . "'";
+                $sql2 = "UPDATE events_restau SET eve_title = '$titre', eve_img = '$pathDB', eve_alt='$pathDB' WHERE eve_oid = '".$id."'";
                 $result2 = $conn->query($sql2);
                 ?>
 
