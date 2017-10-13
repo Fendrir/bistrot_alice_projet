@@ -1,11 +1,18 @@
 //Click on stuff with .myImg class will launch the function
-$('.myImg').click(function () {
-    //Showing the block with .myModal id
-    $('#myModal').css("display", "block");
-    //Setting the #imgModal source with the source of block we just clicked
-    $('#imgModal').attr('src', $(this).attr('src'));
-    //Getting the alt of block we clicked to push it in block with .caption class
-    $('#caption').html($(this).attr("alt"));
+$('img').click(function(){
+    if($(this).hasClass('myImg')){
+        //Showing the block with .myModal id
+        $('#myModal').css("display", "block");
+        //Setting the #imgModal source with the source of block we just clicked + Caption
+        $('#imgModal').attr('src', $(this).attr('src'));
+        $('#caption').html($(this).attr("alt"));
+    } else if ($(this).hasClass('events')){
+        // Showing the block with .myModal id
+        $('#myModal').css("display", "block");
+        //Setting the #imgModal source with the source of block we just clicked
+        $('#imgModal').attr('src', $(this).attr('alt'));
+        //Getting the alt of block we clicked to push it in block with .caption class
+    }
 });
 
 //When clicking on block with .close class, launch the function

@@ -44,3 +44,6 @@ height: auto;
     width: 100% \9;
 }
 
+.hidden {
+    display: none;
+}

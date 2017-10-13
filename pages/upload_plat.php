@@ -32,12 +32,12 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {       //Si le 
         //3. strtolower met l'extension en minuscules.
         $extension_upload = strtolower(substr(strrchr($_FILES['image']['name'], '.'), 1));
         if(in_array($extension_upload, $extensions_valides)) {     //Si l'extension du fichier correspond aux formats jpg, jpeg, gif ou png
-            $sql = "SELECT car_title, car_img FROM carte WHERE car_oid = '".$id."'"; //Select de la row de l'event
+            $sql = "SELECT pla_title, pla_img FROM plat WHERE pla_oid = '".$id."'"; //Select de la row de l'event
             $result = $conn->query($sql);
 
             // Suppression de l'ancienne image sur le serveur
             while ($row = $result->fetch_assoc()) {
-                $image = $row['car_img'];
+                $image = $row['pla_img'];
                 $unlink = unlink($image);
             }
 
@@ -46,7 +46,7 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {       //Si le 
             }
 
             $tmp_name = $_FILES['image']['tmp_name'];                           //Récupération du chemin de l'image uploadée
-            $name = 'carte' . $id . $_FILES['image']['name'];                   //Modification du nom de l'image pour la rendre unique sur le serveur
+            $name = 'plat' . $id . $_FILES['image']['name'];                   //Modification du nom de l'image pour la rendre unique sur le serveur
             $path = "../images";                                                //Chemin pour diriger l'image
             $pathDB = "$path/$name";                                            //Concaténation du chemin + nom de l'image
             $resultat = move_uploaded_file($tmp_name, "$pathDB");    //Mouvement de l'image uploadée vers le fichier ciblé
@@ -58,7 +58,7 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {       //Si le 
 
                     <?php       //Mise à jour de la DB
                     $titre = $_POST['titre'];
-                    $sql2 = "UPDATE carte SET car_title = '$titre', car_img = '$pathDB' WHERE car_oid = '".$id."'";
+                    $sql2 = "UPDATE plat SET pla_title = '$titre', pla_img = '$pathDB' WHERE pla_oid = '".$id."'";
                     $result2 = $conn->query($sql2);
                     ?>
 

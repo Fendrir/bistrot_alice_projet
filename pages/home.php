@@ -1,15 +1,33 @@
 <?php
-function img($id, $table, $data1, $data2, $tableid)
+function img($num = 1, $id = 1, $table = 'plat', $data1 = 'pla_img', $data2 = 'pla_title',
+             $tableid = 'pla_oid', $classImg = 'myImg', $server = 'localhost', $user = 'root',
+             $pwd = 'root', $db = 'bistrot')
 {
-    $servername = "localhost";
-    $username = "root";
-    $password = "root";
-    $dbname = "bistrot";
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    $sql = "SELECT $data1, $data2 FROM $table WHERE $tableid = $id";
+    $conn = new mysqli($server, $user, $pwd, $db);
+    if($data1 === 'banEvents.jpg'){
+        $sql = "SELECT $data2 FROM $table WHERE $tableid = $num";
+        $result = $conn->query($sql);
+        while ($row = $result->fetch_assoc()) {
+            echo '<img class="taille align-middle ' . $classImg . '" src="' . $data1 . '" alt="' . $row[$data2] . '"/>';
+        }
+    } else {
+        $sql = "SELECT $data1, $data2 FROM $table WHERE $tableid = $num";
+        $result = $conn->query($sql);
+        while ($row = $result->fetch_assoc()) {
+            echo '<img id="'.$id.'" class="taille align-middle ' . $classImg . '" src="' . $row[$data1] . '" alt="' . $row[$data2] . '"/>';
+        }
+    }
+}
+
+function imgCaroussel($num = 1, $table = 'carte', $data1 = 'car_img', $data2 = 'car_title',
+             $tableid = 'car_oid', $server = 'localhost', $user = 'root',
+             $pwd = 'root', $db = 'bistrot')
+{
+    $conn = new mysqli($server, $user, $pwd, $db);
+    $sql = "SELECT $data1, $data2 FROM $table WHERE $tableid = $num";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
-        echo '<img class="taille align-middle myImg" src="' . $row[$data1] . '" alt="' . $row[$data2] . '"/>';
+        echo '<img class="d-block img-fluid" src="' . $row[$data1] . '" alt="' . $row[$data2] . '">';
     }
 }
 ?>
@@ -24,13 +42,13 @@ function img($id, $table, $data1, $data2, $tableid)
 
     </div>
 
-    <div class="row" id="events">
-        <?php img(1, 'events_restau', 'eve_img', 'eve_title', 'eve_oid' ); ?>
+    <div class="row hidden" id="events">
+        <?php img( 1, 'banEvents', 'events_restau', 'banEvents.jpg', 'eve_alt', 'eve_oid', 'events' ); ?>
     </div>
     <div class="row">
 
         <div class="col-md-4 ">
-            <?php img(1, 'carte', 'car_img', 'car_title', 'car_oid' ); ?>
+            <?php img(1, 1); ?>
             <div class="row">
 
                 <div class="col-md-12">
@@ -45,7 +63,7 @@ function img($id, $table, $data1, $data2, $tableid)
 
 
         <div class="col-md-4 ">
-            <?php img(2, 'carte', 'car_img', 'car_title', 'car_oid' ); ?>
+            <?php img(2, 2); ?>
         </div>
 
         <div class="col-md-4">
@@ -66,7 +84,7 @@ function img($id, $table, $data1, $data2, $tableid)
             <div class="row">
 
                 <div class="col-md-12">
-                    <?php img(3, 'carte', 'car_img', 'car_title', 'car_oid' ); ?>
+                    <?php img(3, 3); ?>
                 </div>
 
             </div>
@@ -100,13 +118,13 @@ function img($id, $table, $data1, $data2, $tableid)
                         <div class="carousel-inner" role="listbox">
 
                             <div class="carousel-item active">
-                                <img class="d-block img-fluid" src="images_bistrot/carte_boisson.jpg" alt="First slide">
+                                <?php imgCaroussel(1); ?>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block img-fluid" src="images_bistrot/carte_dessert.jpg" alt="Second slide">
+                                <?php imgCaroussel(2); ?>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block img-fluid" src="images_bistrot/carte_vins.jpg" alt="Third slide">
+                                <?php imgCaroussel(3); ?>
                             </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
