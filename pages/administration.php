@@ -5,7 +5,7 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
 } else {
 ?>
 
-<div class="col-9">
+<div class="col-9 text-center">
     <?php
     $sql = "SELECT car_title, car_img FROM carte WHERE car_oid > 0";
     $result = $conn->query($sql);
@@ -13,18 +13,20 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
     while($row = $result->fetch_assoc()){
         ?>
         <!-- GESTION DE LA CARTE <?= $i ?>-->
-        <div class="row">
-            <div class="col">
+        <div class="row mt-0">
+            <div class="col border border-bottom-0 align-middle">
+                <h4>Plat <?= $i; ?></h4>
 
-                <form method="post" action="?p=upload&id=<?= $i ?>" enctype="multipart/form-data">
-                    <input type="file" name="image" id="mon_fichier" /><br />
-                    <label for="titre">Titre du fichier (max. 50 caractères) :</label><br />
-                    <input type="text" name="titre" id="titre">
-                    <input type="submit" name="submit" value="Envoyer" />
+                <form class="mt-3 btn btn-warning" method="post" action="?p=upload&id=<?= $i ?>" enctype="multipart/form-data">
+                    <h5>Image du plat</h5>
+                    <input class="btn btn-warning" type="file" name="image"/><br>
+                    <label class="mt-3" for="titre"><h5>Nom du plat</h5></label>
+                    <input class="input-group" type="text" name="titre" id="titre"><br>
+                    <button class="btn btn-info" type="submit">Envoyer</button>
                 </form>
             </div>
-            <div class="col"><h3><?= $row['car_title'] ?></h3>
-                <img alt="<?= $row['car_img'] ?>" src="<?= $row['car_img'] ?>"/></div>
+            <div class="col border border-left-0 border-bottom-0"><h4><?= $row['car_title'] ?></h4>
+                <img class="taille align-middle" alt="<?= $row['car_img'] ?>" src="<?= $row['car_img'] ?>"/></div>
         </div>
         <?php
         $i++;
@@ -36,22 +38,24 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
         ?>
         <!-- FIN GESTION DES CARTES -->
         <!-- GESTION DES EVENEMENTS -->
-        <div class="row">
-            <div class="col">
 
-                <form method="post" action="?p=uploadevent&id=1" enctype="multipart/form-data">
-                    <input type="file" name="image" id="mon_fichier" /><br />
-                    <label for="titre">Titre du fichier (max. 50 caractères) :</label><br />
-                    <input type="text" name="titre" id="titre">
-                    <input type="submit" name="submit" value="Envoyer" />
+        <div class="row">
+            <div class="col border">
+                <h4>Evènement</h4>
+
+                <form class="mt-3 btn btn-info" method="post" action="?p=upload&id=<?= $i ?>" enctype="multipart/form-data">
+                    <h5 class="mt-3">Image de l'évènement</h5>
+                    <input class="btn btn-warning" type="file" name="image" id="content" /><br>
+                    <label class="mt-3" for="titre"><h5>Nom de l'évènement</h5></label>
+                    <input class="input-group" type="text" name="titre" id="titre"><br>
+                    <button class="btn btn-warning" type="submit">Envoyer</button>
                 </form>
                 <form action="?p=delete_event&id=1" method="post">
                     <button class="btn btn-danger">Supprimer l'évènement</button>
                 </form>
             </div>
-
-            <div class="col" id="event"><h3><?= $row['eve_title'] ?></h3>
-                <img alt="<?= $row['eve_img'] ?>" src="<?= $row['eve_img'] ?>"/></div>
+            <div class="col border border-left-0"><h4><?= $row['eve_title'] ?></h4>
+                <img class="taille align-middle" alt="<?= $row['eve_img'] ?>" src="<?= $row['eve_img'] ?>"/></div>
         </div>
         <?php
     }

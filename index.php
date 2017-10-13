@@ -38,5 +38,5 @@ if($p === 'contact'){
 }
 $content = ob_get_clean();
 include('template/default.php');
- 
+
 ?>

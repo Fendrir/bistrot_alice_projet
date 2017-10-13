@@ -5,7 +5,7 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
 } else {
     $id = htmlspecialchars($_GET['id']);
     var_dump($id);
-    $sql = "SELECT eve_img FROM events_restau WHERE eve_oid = '" . $id . "'";
+    $sql = "SELECT eve_img FROM events_restau WHERE eve_oid = '".$id."'";
     $result = $conn->query($sql);
 
     while ($row = $result->fetch_assoc()) {
@@ -14,7 +14,7 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
         if ($unlink) echo "suppression ok";
     }
 
-//$sql = "UPDATE events_restau SET eve_title = '', eve_img = '' WHERE eve_oid = '".$id."'";
-//$result = $conn->query($sql);
+$sql = "UPDATE events_restau SET eve_title = 'empty', eve_img = '' WHERE eve_oid = '".$id."'";
+$result = $conn->query($sql);
 }
 ?>
