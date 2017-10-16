@@ -1,3 +1,8 @@
+/* @media only screen and (min-width: 768px) and (max-width: 991px) {
+	.tm-2-col-textbox-2 { margin-right: 15px; }
+	#google-map { height: 520px; }
+} */
+
 /*!* Extra small devices (portrait phones, less than 576px) *!*/
 /*@media (max-width: 575px) { ... }*/
 
@@ -18,15 +23,14 @@
     background-color: rgba(86,61,124,.15);
     border: 1px solid rgba(86,61,124,.2); */
 }
+/* .align-middle{
+    width: 840;
+    height: 200px; */
 
-.taille{
-
-width: 250px;
-height: auto;
-
-
+.taille {
+    width: 250px;
+    height: auto;
 }
-
 
 .taillevideo{
     
@@ -36,12 +40,14 @@ height: auto;
 }
 
 
-.fa {
-    color: #C89EA4;
-}
 
 .img-fluid{
     width: 100% \9;
+
+}
+.map{
+    height: 430px;
+    width: 100%;  
 }
 
 .hidden {

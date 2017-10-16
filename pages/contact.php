@@ -1,5 +1,5 @@
-
-<div class="col-lg-9 text-center">
+<div class="row">
+<div class="col-md-6 text-center">
 
 
     
@@ -19,11 +19,12 @@
     <p>
         info@lebistrotdalice.fr
     </p>  
-
-    <iframe class="img-fluid" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11631.410184879449!2d2.351357!3d43.212582!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ae2c375dfb3d17%3A0x4c0b247405732500!2s26+Rue+Chartran%2C+11000+Carcassonne%2C+France!5e0!3m2!1sfr!2sfr!4v1507839006307" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div>
+<div class="col-md-6">
+    <iframe class="img-fluid map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11631.410184879449!2d2.351357!3d43.212582!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ae2c375dfb3d17%3A0x4c0b247405732500!2s26+Rue+Chartran%2C+11000+Carcassonne%2C+France!5e0!3m2!1sfr!2sfr!4v1507839006307" width="auto" height="800" frameborder="0" style="border:0" allowfullscreen></iframe>
 
 </div>
-
+    </div>
 
 
 

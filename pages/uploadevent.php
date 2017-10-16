@@ -49,7 +49,7 @@ function upload($inputName, $lineId, $server = 'localhost', $user = 'root', $pwd
             if (!is_dir('images')) {        //Si le dossier images n'existe pas on le créer
                 mkdir('images');
             }
-
+          
             while ($row = $result->fetch_assoc()) {
                 $image = $row['eve_img'];
                 $unlink = unlink($image);
