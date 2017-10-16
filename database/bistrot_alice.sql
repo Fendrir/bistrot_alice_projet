@@ -1,14 +1,13 @@
 #------------------------------------------------------------
 #        Script MySQL.
 #------------------------------------------------------------
-
+DROP database if exists bistrot;
+CREATE DATABASE bistrot;
+USE bistrot;
 
 #------------------------------------------------------------
 # Table: admin
 #------------------------------------------------------------
-DROP database if exists bistrot;
-CREATE DATABASE bistrot;
-USE bistrot;
 
 CREATE TABLE admin(
   adm_oid  int (11) Auto_increment  NOT NULL ,
