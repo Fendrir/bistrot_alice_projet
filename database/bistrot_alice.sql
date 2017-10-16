@@ -1,3 +1,7 @@
+Create database bistrot;
+
+use bistrot;
+
 create table admin
 (
   adm_oid int auto_increment
