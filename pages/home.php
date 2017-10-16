@@ -4,24 +4,30 @@ function img($num = 1, $id = 1, $table = 'plat', $data1 = 'pla_img', $data2 = 'p
              $pwd = 'admin', $db = 'bistrot')
 {
     $conn = new mysqli($server, $user, $pwd, $db);
-    if($data1 === 'banEvents.jpg'){
-        $sql = "SELECT $data2 FROM $table WHERE $tableid = $num";
-        $result = $conn->query($sql);
-        while ($row = $result->fetch_assoc()) {
-            echo '<img class="taille align-middle ' . $classImg . '" src="' . $data1 . '" alt="' . $row[$data2] . '"/>';
-        }
-    } else {
-        $sql = "SELECT $data1, $data2 FROM $table WHERE $tableid = $num";
-        $result = $conn->query($sql);
-        while ($row = $result->fetch_assoc()) {
-            echo '<img id="'.$id.'" class="taille align-middle ' . $classImg . '" src="' . $row[$data1] . '" alt="' . $row[$data2] . '"/>';
+    $sql = "SELECT $data1 FROM $table WHERE $tableid = $num";
+    $result = $conn->query($sql);
+    $sql2 = "SELECT $data2 FROM $table WHERE $tableid = $num + 1";
+    $result2 = $conn->query($sql2);
+    while ($row = $result->fetch_assoc()) {
+        if($table === 'events_restau'){
+            echo '<img class="taille align-middle events" src="' . $row[$data1] . '"';
+            while ($row2 = $result2->fetch_assoc()) {
+                echo 'alt="' . $row2[$data2] . '">';
+            }
+
+        } else {
+            $sql = "SELECT $data1, $data2 FROM $table WHERE $tableid = $num";
+            $result = $conn->query($sql);
+            while ($row = $result->fetch_assoc()) {
+                echo '<img id="' . $id . '" class="taille align-middle ' . $classImg . '" src="' . $row[$data1] . '" alt="' . $row[$data2] . '"/>';
+            }
         }
     }
 }
 
 function imgCaroussel($num = 1, $table = 'carte', $data1 = 'car_img', $data2 = 'car_title',
-             $tableid = 'car_oid', $server = 'localhost', $user = 'root',
-             $pwd = 'admin', $db = 'bistrot')
+                      $tableid = 'car_oid', $server = 'localhost', $user = 'root',
+                      $pwd = 'admin', $db = 'bistrot')
 {
     $conn = new mysqli($server, $user, $pwd, $db);
     $sql = "SELECT $data1, $data2 FROM $table WHERE $tableid = $num";
@@ -44,7 +50,7 @@ function imgCaroussel($num = 1, $table = 'carte', $data1 = 'car_img', $data2 = '
     </div>
 
     <div class="row hidden" id="events">
-        <?php img( 1, 'banEvents', 'events_restau', 'banEvents.jpg', 'eve_alt', 'eve_oid', 'events' ); ?>
+        <?php img( 1, 'banEvents', 'events_restau', 'eve_img', 'eve_alt', 'eve_oid', 'events' ); ?>
     </div>
     <div class="row">
 

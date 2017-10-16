@@ -30,7 +30,7 @@
     <div class="row justify-content-center">
     <?php include('bouton_nav.php') ?>
         <?php echo $content; ?>
-        <?php echo $_SESSION['nick']; ?>
+        <!--<?php echo $_SESSION['nick']; ?>-->
 
     </div>
     <!-- correspond à la fin de la div du row des boutons nav_bar -->
