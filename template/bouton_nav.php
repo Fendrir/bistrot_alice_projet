@@ -12,7 +12,7 @@ if($_SESSION['nick'] === 'Franck'){
 ?>
 
 
-    <div class="col-md-3">
+    <div class="col-md-2">
         <img class="img-fluid" src="../bistrot_alice_projet/images_bistrot/logo.png" alt="logo Bistro" sizes="" srcset="">
 
         <div class="row justify-content-center">
@@ -26,7 +26,7 @@ if($_SESSION['nick'] === 'Franck'){
                 <div class="col-auto">
                     
                     <img class="img-fluid flag-icon" src="node_modules/flag-icon-css/flags/1x1/fr.svg" alt="Français" title="Français">
-                    <img class="img-fluid flag-icon" src="node_modules/flag-icon-css/flags/1x1/us.svg" alt="Anglais" title="English">
+                    <img class="img-fluid flag-icon" src="node_modules/flag-icon-css/flags/1x1/gb.svg" alt="Anglais" title="English">
                 </div></div>
 
 

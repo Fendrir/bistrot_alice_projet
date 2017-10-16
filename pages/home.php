@@ -1,7 +1,7 @@
 <?php
 function img($num = 1, $id = 1, $table = 'plat', $data1 = 'pla_img', $data2 = 'pla_title',
              $tableid = 'pla_oid', $classImg = 'myImg', $server = 'localhost', $user = 'root',
-             $pwd = 'root', $db = 'bistrot')
+             $pwd = 'admin', $db = 'bistrot')
 {
     $conn = new mysqli($server, $user, $pwd, $db);
     if($data1 === 'banEvents.jpg'){
@@ -21,7 +21,7 @@ function img($num = 1, $id = 1, $table = 'plat', $data1 = 'pla_img', $data2 = 'p
 
 function imgCaroussel($num = 1, $table = 'carte', $data1 = 'car_img', $data2 = 'car_title',
              $tableid = 'car_oid', $server = 'localhost', $user = 'root',
-             $pwd = 'root', $db = 'bistrot')
+             $pwd = 'admin', $db = 'bistrot')
 {
     $conn = new mysqli($server, $user, $pwd, $db);
     $sql = "SELECT $data1, $data2 FROM $table WHERE $tableid = $num";
@@ -39,7 +39,7 @@ function imgCaroussel($num = 1, $table = 'carte', $data1 = 'car_img', $data2 = '
 
     <div class="row">
 
-        <a data-toggle="modal" data-target=".carte-menu-modal-lg" href="#"><img class="align-middle" src="images_bistrot/carte_printemps.jpg" alt="image_menu_saison"/></a>
+        <a data-toggle="modal" data-target=".carte-menu-modal-lg" href="#"><img class="img-fluid align-middle" src="images_bistrot/carte_printemps.jpg" alt="image_menu_saison"/></a>
 
     </div>
 
@@ -54,7 +54,7 @@ function imgCaroussel($num = 1, $table = 'carte', $data1 = 'car_img', $data2 = '
 
                 <div class="col-md-12">
 
-                    <iframe class="taillevideo align-middle" src="https://www.youtube.com/embed/T5UsrAxid74" frameborder="0" allowfullscreen></iframe>
+                    <iframe class="img-fluid taillevideo align-middle" src="https://www.youtube.com/embed/T5UsrAxid74" frameborder="0" allowfullscreen></iframe>
 
                 </div>
 
@@ -73,7 +73,7 @@ function imgCaroussel($num = 1, $table = 'carte', $data1 = 'car_img', $data2 = '
 
                 <div class="col-md-12">
 
-                    <p>Je suis la prez par ici Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam tempora natus quo eos error provident
+                    <p class="descrip text-justify">Je suis la prez par ici Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam tempora natus quo eos error provident
                         quisquam reprehenderit sit asperiores libero ipsam aut ut, commodi minus, placeat facilis id earum quod? ipsum dolor sit amet
                         consectetur adipisicing elit.
                         Numquam tempora natus quo eos error</p>

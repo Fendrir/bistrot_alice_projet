@@ -41,7 +41,7 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {       //Si le 
 
             $tmp_name = $_FILES['image']['tmp_name'];                           //Récupération du chemin de l'image uploadée
             $name = 'event' . $id . $_FILES['image']['name'];                   //Modification du nom de l'image pour la rendre unique sur le serveur
-            $path = "../images";                                                //Chemin pour diriger l'image
+            $path = "images";                                                //Chemin pour diriger l'image
             $pathDB = "$path/$name";                                            //Concaténation du chemin + nom de l'image
             $resultat = move_uploaded_file($tmp_name, "$pathDB");    //Mouvement de l'image uploadée vers le fichier ciblé
             if ($resultat) {        //Si tout est OK
