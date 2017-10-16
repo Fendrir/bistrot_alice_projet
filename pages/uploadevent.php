@@ -35,12 +35,6 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {       //Si le 
             $sql = "SELECT eve_title, eve_img FROM events_restau WHERE eve_oid = '".$id."'"; //Select de la row de l'event
             $result = $conn->query($sql);
 
-            // Suppression de l'ancienne image sur le serveur
-            while ($row = $result->fetch_assoc()) {
-                $image = $row['eve_img'];
-                $unlink = unlink($image);
-            }
-
             if (!is_dir('images')) {        //Si le dossier images n'existe pas on le créer
                 mkdir('images');
             }
