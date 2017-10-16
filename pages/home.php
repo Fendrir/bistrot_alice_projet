@@ -50,12 +50,7 @@ function imgCaroussel($num = 1, $table = 'carte', $data1 = 'car_img', $data2 = '
 
         <div class="col-md-4 ">
             <?php img(1, 1); ?>
-            </div>
-        <div class="col-md-4 ">
-            <?php img(2, 2); ?>
-        </div>
             <div class="row">
-
 
                 <div class="col-md-12">
 
@@ -68,7 +63,9 @@ function imgCaroussel($num = 1, $table = 'carte', $data1 = 'car_img', $data2 = '
         </div>
 
 
-
+        <div class="col-md-4 ">
+            <?php img(2, 2); ?>
+        </div>
 
         <div class="col-md-4">
 
