@@ -10,12 +10,23 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {       //Si le 
     <!-- FIN Erreur -->
     <?php
 } else {
-    $id = htmlspecialchars($_GET['id']);
-    $_FILES['image']['name'];    //Le nom original du fichier, comme sur le disque du visiteur (exemple : mon_image.png).
-    $_FILES['image']['tmp_name']; //L'adresse vers le fichier uploadé dans le répertoire temporaire.
-    $_FILES['image']['error'];    //Le code d'erreur, qui permet de savoir si le fichier a bien été uploadé.
+    if(isset($_FILES['banEvent']) && isset($_FILES['image'])){
+        upload('banEvent', 1);
+        upload('image', 2);
+    } else {
+        echo 'erreur';
+    }
+}
 
-    if ($_FILES['image']['error'] > 0) {        //S'il y a eu des erreurs lors de l'upload
+function upload($inputName, $lineId, $server = 'localhost', $user = 'root', $pwd = 'admin', $db = 'bistrot')
+{
+    $conn = new mysqli($server, $user, $pwd, $db);
+
+    $_FILES[$inputName]['name'];    //Le nom original du fichier, comme sur le disque du visiteur (exemple : mon_image.png).
+    $_FILES[$inputName]['tmp_name']; //L'adresse vers le fichier uploadé dans le répertoire temporaire.
+    $_FILES[$inputName]['error'];    //Le code d'erreur, qui permet de savoir si le fichier a bien été uploadé.
+
+    if ($_FILES[$inputName]['error'] > 0) {        //S'il y a eu des erreurs lors de l'upload
         ?>
         <!-- Erreur -->
         <div class="col-9 text-center">
@@ -30,18 +41,23 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {       //Si le 
         //1. strrchr renvoie l'extension avec le point (« . »).
         //2. substr(chaine,1) ignore le premier caractère de chaine.
         //3. strtolower met l'extension en minuscules.
-        $extension_upload = strtolower(substr(strrchr($_FILES['image']['name'], '.'), 1));
-        if(in_array($extension_upload, $extensions_valides)) {     //Si l'extension du fichier correspond aux formats jpg, jpeg, gif ou png
-            $sql = "SELECT eve_title, eve_img FROM events_restau WHERE eve_oid = '".$id."'"; //Select de la row de l'event
+        $extension_upload = strtolower(substr(strrchr($_FILES[$inputName]['name'], '.'), 1));
+        if (in_array($extension_upload, $extensions_valides)) {     //Si l'extension du fichier correspond aux formats jpg, jpeg, gif ou png
+            $sql = "SELECT eve_title, eve_img FROM events_restau WHERE eve_oid = $lineId"; //Select de la row de l'event
             $result = $conn->query($sql);
 
             if (!is_dir('images')) {        //Si le dossier images n'existe pas on le créer
                 mkdir('images');
             }
 
-            $tmp_name = $_FILES['image']['tmp_name'];                           //Récupération du chemin de l'image uploadée
-            $name = 'event' . $id . $_FILES['image']['name'];                   //Modification du nom de l'image pour la rendre unique sur le serveur
-            $path = "../images";                                                //Chemin pour diriger l'image
+            while ($row = $result->fetch_assoc()) {
+                $image = $row['eve_img'];
+                $unlink = unlink($image);
+            }
+
+            $tmp_name = $_FILES[$inputName]['tmp_name'];                           //Récupération du chemin de l'image uploadée
+            $name = 'event' . $lineId . $_FILES[$inputName]['name'];                   //Modification du nom de l'image pour la rendre unique sur le serveur
+            $path = "images";                                                   //Chemin pour diriger l'image
             $pathDB = "$path/$name";                                            //Concaténation du chemin + nom de l'image
             $resultat = move_uploaded_file($tmp_name, "$pathDB");    //Mouvement de l'image uploadée vers le fichier ciblé
             if ($resultat) {        //Si tout est OK
@@ -50,14 +66,14 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {       //Si le 
                 <div class="col-9 text-center">
                     <h1>Evènement ajouté avec succès !</h1>
 
-                <?php       //Mise à jour de la DB
-                $titre = $_POST['titre'];
-                $sql2 = "UPDATE events_restau SET eve_title = '$titre', eve_img = '$pathDB', eve_alt='$pathDB' WHERE eve_oid = '".$id."'";
-                $result2 = $conn->query($sql2);
-                ?>
+                    <?php //Mise à jour de la DB
+                    $titre = $_POST['titre'];
+                    $sql2 = "UPDATE events_restau SET eve_title = '$titre', eve_img = '$pathDB', eve_alt='$pathDB' WHERE eve_oid = $lineId";
+                    $result2 = $conn->query($sql2);
+                    ?>
 
                     <h3><?= $_POST['titre'] ?></h3>
-                    <img alt="<?= $pathDB ?>" src="<?= $pathDB ?>"/>
+                    <img src="<?= $pathDB ?>" alt="<?= $pathDB ?>"/>
                     <a href="?p=administration">Retour à la page d'administration</a>
                 </div>
                 <!-- FIN Résumé du post -->
@@ -76,5 +92,4 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {       //Si le 
             <?php
         }
     }
-}
-?>
+}?>
