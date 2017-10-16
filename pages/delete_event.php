@@ -3,9 +3,7 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
     echo 'erreur lolilol';
 
 } else {
-    $id = htmlspecialchars($_GET['id']);
-    var_dump($id);
-    $sql = "SELECT eve_img FROM events_restau WHERE eve_oid = '".$id."'";
+    $sql = "SELECT eve_img FROM events_restau WHERE eve_oid >= 1";
     $result = $conn->query($sql);
 
     while ($row = $result->fetch_assoc()) {
@@ -14,7 +12,7 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
         if ($unlink) echo "suppression ok";
     }
 
-$sql = "UPDATE events_restau SET eve_title = 'Pas d\'évènement', eve_img = 'banEvents.jpg', eve_alt='empty' WHERE eve_oid = '".$id."'";
+$sql = "UPDATE events_restau SET eve_title = 'Pas d\'évènement', eve_img = 'banEvents.jpg', eve_alt='empty' WHERE eve_oid >= 1";
 $result = $conn->query($sql);
 }
 ?>

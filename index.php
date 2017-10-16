@@ -18,9 +18,14 @@ if($p === 'connexion'){
 if($p === 'admin'){
     include('pages/admin.php');
 }
+// Selection par le client
 if($p === 'administration'){
     include('pages/administration.php');
 }
+if($p === 'administration2'){
+    include('pages/administration2.php');
+}
+// Fin selection
 if($p === 'deconnexion'){
     include('pages/deconnexion.php');
 }

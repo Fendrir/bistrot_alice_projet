@@ -63,7 +63,7 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {       //Si le 
                     ?>
 
                     <h3><?= $_POST['titre'] ?></h3>
-                    <img alt="<?= $pathDB ?>" src="<?= $pathDB ?>"/>
+                    <img class="taille" src="<?= $pathDB ?>" alt="<?= $pathDB ?>"/>
                     <a href="?p=administration">Retour à la page d'administration</a>
                 </div>
                 <!-- FIN Résumé du post -->

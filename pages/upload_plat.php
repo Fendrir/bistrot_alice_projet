@@ -63,7 +63,7 @@ var_dump($_FILES);
                     ?>
 
                     <h3><?= $_POST['titre'] ?></h3>
-                    <img alt="<?= $pathDB ?>" src="<?= $pathDB ?>"/>
+                    <img src="<?= $pathDB ?>" alt="<?= $pathDB ?>"/>
                     <a href="?p=administration">Retour à la page d'administration</a>
                 </div>
                 <!-- FIN Résumé du post -->
