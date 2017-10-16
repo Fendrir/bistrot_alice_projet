@@ -7,7 +7,7 @@ function multi($title = 'pla_title', $img = 'pla_img', $table = 'plat', $oid = '
                $titleDiv = 'Plat', $titleInputFile = 'Image du plat', $titleInput = 'Nom du plat', $uploadURL = '?p=upload_plat'){
     $servername = "localhost";
     $username = "root";
-    $password = "root";
+    $password = "admin";
     $dbname = "bistrot";
     $conn = new mysqli($servername, $username, $password, $dbname);
     $sql = "SELECT $title, $img FROM $table WHERE $oid > 0";
