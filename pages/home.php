@@ -50,7 +50,12 @@ function imgCaroussel($num = 1, $table = 'carte', $data1 = 'car_img', $data2 = '
 
         <div class="col-md-4 ">
             <?php img(1, 1); ?>
+            </div>
+        <div class="col-md-4 ">
+            <?php img(2, 2); ?>
+        </div>
             <div class="row">
+
 
                 <div class="col-md-12">
 
@@ -63,9 +68,7 @@ function imgCaroussel($num = 1, $table = 'carte', $data1 = 'car_img', $data2 = '
         </div>
 
 
-        <div class="col-md-4 ">
-            <?php img(2, 2); ?>
-        </div>
+
 
         <div class="col-md-4">
 
@@ -103,18 +106,13 @@ function imgCaroussel($num = 1, $table = 'carte', $data1 = 'car_img', $data2 = '
     <div class="modal fade carte-menu-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-
-                <!-- caroussel -->
-
-
+                <!-- Caroussel -->
                 <div class="row">
-
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-
                         </ol>
                         <div class="carousel-inner" role="listbox">
 
@@ -127,6 +125,7 @@ function imgCaroussel($num = 1, $table = 'carte', $data1 = 'car_img', $data2 = '
                             <div class="carousel-item">
                                 <?php imgCaroussel(3); ?>
                             </div>
+
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -137,15 +136,11 @@ function imgCaroussel($num = 1, $table = 'carte', $data1 = 'car_img', $data2 = '
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
-
                 </div>
-
-
             </div>
         </div>
     </div>
 
-
-
+    <!--Fin Modal-->
 </div>
 

@@ -68,9 +68,9 @@ function multi($title = 'pla_title', $img = 'pla_img', $table = 'plat', $oid = '
         <?php
     }
 
-    multi();
+    multi();    // GESTION DES PLATS
     multi('car_title', 'car_img', 'carte', 'car_oid',
-        'Carte', 'Image de la carte', 'Nom de la carte', '?p=upload');
+        'Carte', 'Image de la carte', 'Nom de la carte', '?p=upload');  //GESTION DES CARTES
     }
     ?>
 
