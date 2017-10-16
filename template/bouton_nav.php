@@ -1,17 +1,18 @@
 <?php
 
-$boutons ="";
-
-if(!empty($_SESSION['nick'])){
-    
-    $boutons = '<li><button class="btn">Gérer</button></li>
-    <li><button class="btn">Se déconnecter</button></li>';
-    
+if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
+    $_SESSION['nick'] = 'Invité';
+    $boutons = "";
+}
+if($_SESSION['nick'] === 'Franck'){
+    $boutons = '<li><a href="?p=administration"><button class="btn">Gérer</button></a></li>
+                <li><a href="?p=deconnexion"><button class="btn">Se déconnecter</button></a></li>';
 }
 
 ?>
-<div class="row justify-content-center">
-    <div class="col-md-3">
+
+
+    <div class="col-md-2">
         <img class="img-fluid" src="../bistrot_alice_projet/images_bistrot/logo.png" alt="logo Bistro" sizes="" srcset="">
 
         <div class="row justify-content-center">
@@ -25,7 +26,7 @@ if(!empty($_SESSION['nick'])){
                 <div class="col-auto">
                     
                     <img class="img-fluid flag-icon" src="node_modules/flag-icon-css/flags/1x1/fr.svg" alt="Français" title="Français">
-                    <img class="img-fluid flag-icon" src="node_modules/flag-icon-css/flags/1x1/us.svg" alt="Anglais" title="English">
+                    <img class="img-fluid flag-icon" src="node_modules/flag-icon-css/flags/1x1/gb.svg" alt="Anglais" title="English">
                 </div></div>
 
 
@@ -38,10 +39,10 @@ if(!empty($_SESSION['nick'])){
         </ul>
         
                 
-                <?php echo $boutons;
+
+
+            <?php echo $boutons;
                 var_dump($_SESSION['nick']); ?>
             </ul>
         </div>
-        
-        
-        
+

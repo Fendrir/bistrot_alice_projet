@@ -1,14 +1,19 @@
-/* Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 575px) { ... }
+/* @media only screen and (min-width: 768px) and (max-width: 991px) {
+	.tm-2-col-textbox-2 { margin-right: 15px; }
+	#google-map { height: 520px; }
+} */
 
-/* Small devices (landscape phones, less than 768px) */
-@media (max-width: 767px) { ... }
+/*!* Extra small devices (portrait phones, less than 576px) *!*/
+/*@media (max-width: 575px) { ... }*/
 
-/* Medium devices (tablets, less than 992px) */
-@media (max-width: 991px) { ... }
+/*!* Small devices (landscape phones, less than 768px) *!*/
+/*@media (max-width: 767px) { ... }*/
 
-/* Large devices (desktops, less than 1200px) */
-@media (max-width: 1199px) { ... }
+/*!* Medium devices (tablets, less than 992px) *!*/
+/*@media (max-width: 991px) { ... }*/
+
+/*!* Large devices (desktops, less than 1200px) *!*/
+/*@media (max-width: 1199px) { ... }*/
 
 
 .row [class^="col-"] {   
@@ -18,27 +23,33 @@
     background-color: rgba(86,61,124,.15);
     border: 1px solid rgba(86,61,124,.2); */
 }
+/* .align-middle{
+    width: 840;
+    height: 200px; */
 
-.taille{
-
-width: 250px;
-height: auto;
-
-
+.taille {
+    width: 250px;
+    height: auto;
 }
 
 .taillevideo{
     
     width: 535px;
-    height: 315;
+    height: 315px;
    
 }
 
 
-.fa {
-    color: #C89EA4;
-}
 
 .img-fluid{
     width: 100% \9;
+
+}
+.map{
+    height: 430px;
+    width: 100%;  
+}
+
+.hidden {
+    display: none;
 }
