@@ -30,6 +30,7 @@ function imgCaroussel($num = 1, $table = 'carte', $data1 = 'car_img', $data2 = '
         echo '<img class="d-block img-fluid" src="' . $row[$data1] . '" alt="' . $row[$data2] . '">';
     }
 }
+
 ?>
 
 <div class="col-md-9">
