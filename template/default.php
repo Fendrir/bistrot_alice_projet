@@ -27,7 +27,7 @@
 
 <div class="container">
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-around">
     <?php include('bouton_nav.php') ?>
         <?php echo $content; ?>
         <!--<?php echo $_SESSION['nick']; ?>-->

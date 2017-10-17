@@ -10,7 +10,7 @@ function img($num = 1, $id = 1, $table = 'plat', $data1 = 'pla_img', $data2 = 'p
     $result2 = $conn->query($sql2);
     while ($row = $result->fetch_assoc()) {
         if($table === 'events_restau'){
-            echo '<img class="taille align-middle events" src="' . $row[$data1] . '"';
+            echo '<img class="taille align-middle events img-fluid " src="' . $row[$data1] . '"';
             while ($row2 = $result2->fetch_assoc()) {
                 echo 'alt="' . $row2[$data2] . '">';
             }
@@ -19,7 +19,7 @@ function img($num = 1, $id = 1, $table = 'plat', $data1 = 'pla_img', $data2 = 'p
             $sql = "SELECT $data1, $data2 FROM $table WHERE $tableid = $num";
             $result = $conn->query($sql);
             while ($row = $result->fetch_assoc()) {
-                echo '<img id="' . $id . '" class="taille align-middle ' . $classImg . '" src="' . $row[$data1] . '" alt="' . $row[$data2] . '"/>';
+                echo '<img id="' . $id . '" class="taille img-fluid ' . $classImg . '" src="' . $row[$data1] . '" alt="' . $row[$data2] . '"/>';
             }
         }
     }
@@ -33,71 +33,51 @@ function imgCaroussel($num = 1, $table = 'carte', $data1 = 'car_img', $data2 = '
     $sql = "SELECT $data1, $data2 FROM $table WHERE $tableid = $num";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
-        echo '<img class="d-block img-fluid" src="' . $row[$data1] . '" alt="' . $row[$data2] . '">';
+        echo '<img class="d-block img-fluid text-center hidden-xs-up" src="' . $row[$data1] . '" alt="' . $row[$data2] . '" style="height: 80%; width: auto">';
     }
 }
 
 ?>
 
-<div class="col-md-9">
-
-    <!-- image lien sur le caroussel -->
-
+<div class="col-md-9 text-center">
     <div class="row">
-
-        <a data-toggle="modal" data-target=".carte-menu-modal-lg" href="#"><img class="align-middle" src="images_bistrot/carte_printemps.jpg" alt="image_menu_saison"/></a>
-
-    </div>
-
-    <div class="row hidden" id="events">
+        <div class="col-md-12">
+            <!-- image lien sur le caroussel -->
+            <a data-toggle="modal" data-target=".carte-menu-modal-lg" href="#"><img class="img-fluid" src="images_bistrot/carte_printemps.jpg" alt="image_menu_saison"/></a>
+        </div>
+        <div class="col-md-12 mt-4 hidden text-center" id="events">
         <?php img( 1, 'banEvents', 'events_restau', 'eve_img', 'eve_alt', 'eve_oid', 'events' ); ?>
     </div>
-    <div class="row">
-
-        <div class="col-md-4 ">
-            <?php img(1, 1); ?>
+        <div class="col-md-8 mt-4">
             <div class="row">
-
-                <div class="col-md-12">
-
-                    <iframe class="taillevideo align-middle" src="https://www.youtube.com/embed/T5UsrAxid74" frameborder="0" allowfullscreen></iframe>
-
+                <div class="col-md-6">
+                <?php img(1, 1); ?>
                 </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="col-md-4 ">
-            <?php img(2, 2); ?>
-        </div>
-
-        <div class="col-md-4">
-
-            <div class="row">
-
-                <div class="col-md-12">
-
-                    <p>Je suis la prez par ici Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam tempora natus quo eos error provident
-                        quisquam reprehenderit sit asperiores libero ipsam aut ut, commodi minus, placeat facilis id earum quod? ipsum dolor sit amet
-                        consectetur adipisicing elit.
-                        Numquam tempora natus quo eos error</p>
-
+                <div class="col-md-6 mt-md-0 mt-4">
+                <?php img(2, 2); ?>
                 </div>
-
             </div>
-
             <div class="row">
-
+                <div class="col-md-12 text-center mt-4">
+                    <iframe class="taillevideo text-center" src="https://www.youtube.com/embed/T5UsrAxid74" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="col-12 mt-3">
+                <div class="row text-center">
+                <p>Je suis la prez par ici Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam tempora natus quo eos error provident
+                    quisquam reprehenderit sit asperiores libero ipsam aut ut, commodi minus, placeat facilis id earum quod? ipsum dolor sit amet
+                    consectetur adipisicing elit.
+                    Numquam tempora natus quo eos error</p>
+                </div>
+            </div>
+            <div class="row mt-2">
                 <div class="col-md-12">
                     <?php img(3, 3); ?>
                 </div>
-
             </div>
-
         </div>
-
     </div>
 
 
@@ -143,7 +123,8 @@ function imgCaroussel($num = 1, $table = 'carte', $data1 = 'car_img', $data2 = '
             </div>
         </div>
     </div>
+</div>
 
-    <!--Fin Modal-->
+<!--Fin Modal-->
 </div>
 

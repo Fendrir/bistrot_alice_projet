@@ -11,28 +11,30 @@
 /*@media (max-width: 1199px) { ... }*/
 
 
-.row [class^="col-"] {   
-    
+.row [class^="col-"] {
+
     /* background-color: #eee;
     border: 1px solid #ddd;
     background-color: rgba(86,61,124,.15);
     border: 1px solid rgba(86,61,124,.2); */
 }
 
+/*div {*/
+    /*border: 1px solid black;*/
+/*}*/
+
 .taille{
 
 width: 250px;
 height: auto;
-
-
 }
 
 
 .taillevideo{
-    
-    width: 535px;
-    height: 315px;
-   
+
+    width: 100%;
+    height: 40%;
+
 }
 
 
@@ -53,7 +55,6 @@ input {
     font-size: 12px;
 }
 
-button {
+.button_admin {
     width: 60%;
-    font-size: 50px;
 }

@@ -37,8 +37,10 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {       //Si le 
 
             // Suppression de l'ancienne image sur le serveur
             while ($row = $result->fetch_assoc()) {
-                $image = $row['car_img'];
-                $unlink = unlink($image);
+                if(!empty($row['car_img'])){
+                    $image = $row['car_img'];
+                    unlink($image);
+                }
             }
 
             if (!is_dir('images')) {        //Si le dossier images n'existe pas on le créer
@@ -50,21 +52,25 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {       //Si le 
             $path = "images";                                                //Chemin pour diriger l'image
             $pathDB = "$path/$name";                                            //Concaténation du chemin + nom de l'image
             $resultat = move_uploaded_file($tmp_name, "$pathDB");    //Mouvement de l'image uploadée vers le fichier ciblé
-            if ($resultat) {        //Si tout est OK
+            if ($resultat) {        //Si tout est OK, mise à jour de la DB
+                $titre = $_POST['titre'];
+                $sql2 = "UPDATE carte SET car_title = '$titre', car_img = '$pathDB' WHERE car_oid = $id";
+                $conn->query($sql2);
                 ?>
                 <!-- Résumé du post -->
-                <div class="col-9 text-center">
-                    <h1>Evènement ajouté avec succès !</h1>
-
-                    <?php       //Mise à jour de la DB
-                    $titre = $_POST['titre'];
-                    $sql2 = "UPDATE carte SET car_title = '$titre', car_img = '$pathDB' WHERE car_oid = '".$id."'";
-                    $result2 = $conn->query($sql2);
-                    ?>
-
-                    <h3><?= $_POST['titre'] ?></h3>
-                    <img class="taille" src="<?= $pathDB ?>" alt="<?= $pathDB ?>"/>
-                    <a href="?p=administration">Retour à la page d'administration</a>
+                <div class="col-9 align-self-center text-center">
+                    <h1>Carte ajoutée avec succès !</h1>
+                    <div class="col mt-5">
+                        <h3><?= $_POST['titre'] ?></h3>
+                    </div>
+                    <div class="col">
+                        <img class="taille" src="<?= $pathDB ?>" alt="<?= $pathDB ?>"/>
+                    </div>
+                    <div class="mt-3">
+                            <a href="?p=administration">
+                                <button class="btn btn-info">Retour à la page d'administration</button>
+                            </a>
+                    </div>
                 </div>
                 <!-- FIN Résumé du post -->
                 <?php
