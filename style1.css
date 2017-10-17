@@ -1,0 +1,71 @@
+body {
+    
+    padding-top: 10px;
+    
+}
+.container{
+    background-color: rgb(153, 146, 146);
+    border: 2px solid black
+    
+}
+.row [class*="col-"] {       
+    
+    background-color: rgba(50, 48, 54, 0.15);
+    border: 1px solid rgba(93, 4, 235, 0.2);
+    line-height: 20px;
+}
+
+/* syle pour image hover */
+
+.imgc{
+    
+    width: 150px;
+    height: 150px;
+}
+.imgH {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    height: 150px;
+    margin: 0 1em 1em 0;
+    position: relative;
+    width: 150px;
+  }
+  .spanHpres{
+    width: 500px;
+  }
+
+  span.text-content {
+    background: rgba(0,0,0,0.5);
+    color: white;
+    cursor: pointer;
+    display: table;
+    height: 150px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 150px;
+  }
+  
+  span.text-content span {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  span.text-content {
+    background: rgba(0,0,0,0.8);
+    color: white;
+    cursor: pointer;
+    display: table;
+    height: 150px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 150px;
+    opacity: 0;
+  }
+  
+  .imgH:hover span.text-content {
+    opacity: 1;
+  }
