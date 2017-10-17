@@ -2,7 +2,7 @@
 if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {       //Si le user est arrivé ici par "hasard"
     ?>
     <!-- Erreur -->
-    <div class="col-9 text-center">
+    <div class="col-9 align-self-center text-center">
         <h1>Erreur !</h1>
         <p>Veuillez réessayer svp</p>
         <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">Retour à la page précédente</a>
@@ -14,11 +14,11 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {       //Si le 
     $_FILES['image']['name'];    //Le nom original du fichier, comme sur le disque du visiteur (exemple : mon_image.png).
     $_FILES['image']['tmp_name']; //L'adresse vers le fichier uploadé dans le répertoire temporaire.
     $_FILES['image']['error'];    //Le code d'erreur, qui permet de savoir si le fichier a bien été uploadé.
-var_dump($_FILES);
+
     if ($_FILES['image']['error'] > 0) {        //S'il y a eu des erreurs lors de l'upload
         ?>
         <!-- Erreur -->
-        <div class="col-9 text-center">
+        <div class="col-9 align-self-center text-center">
             <h1>Erreur !</h1>
             <p>Veuillez réessayer svp</p>
             <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">Retour à la page précédente</a>
@@ -77,7 +77,7 @@ var_dump($_FILES);
         } else {
             ?>
             <!-- Erreur -->
-            <div class="col-9 text-center">
+            <div class="col-9 align-self-center text-center">
                 <h1>Erreur !</h1>
                 <p>Mauvais format d'image !</p>
                 <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">Retour à la page précédente</a>
