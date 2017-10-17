@@ -2,7 +2,7 @@
 if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {       //Si le user est arrivé ici par "hasard"
     ?>
     <!-- Erreur -->
-    <div class="col-9 text-center">
+    <div class="col-9 align-self-center text-center">
         <h1>Erreur !</h1>
         <p>Veuillez réessayer svp</p>
         <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">Retour à la page précédente</a>
@@ -54,7 +54,7 @@ function upload($inputName, $lineId, $server = 'localhost', $user = 'root', $pwd
     if ($_FILES[$inputName]['error'] > 0) {        //S'il y a eu des erreurs lors de l'upload
         ?>
         <!-- Erreur -->
-        <div class="col-9 text-center">
+        <div class="col-9 align-self-center text-center">
             <h1>Erreur !</h1>
             <p>Veuillez réessayer svp</p>
             <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">Retour à la page précédente</a>
@@ -102,7 +102,7 @@ function upload($inputName, $lineId, $server = 'localhost', $user = 'root', $pwd
         } else {
             ?>
             <!-- Erreur -->
-            <div class="col-9 text-center">
+            <div class="col-9 align-self-center text-center">
                 <h1>Erreur !</h1>
                 <p>Mauvais format d'image !</p>
                 <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">Retour à la page précédente</a>
