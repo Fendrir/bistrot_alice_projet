@@ -10,12 +10,14 @@
     </address>
     <p>
         Réservations UNIQUEMENT par téléphone
-    </p>    
-    <p>
-        Horaires :<br>
-        Du mardi au Samedi : 12H-14H30 / 19H30-22H00<br>
-        Dimanche et Lundi : Fermé
-    </p>
+    </p> 
+    <ul>
+        <li>Horaires :</li>
+        <li>Du mardi au Samedi : 12H-14H30 / 19H30-22H00</li>
+        <li>Dimanche et Lundi : Fermé</li>
+
+    </ul>  
+    
     <p>
         info@lebistrotdalice.fr
     </p>  
