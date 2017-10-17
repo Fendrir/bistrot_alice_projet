@@ -38,14 +38,14 @@ function imgCaroussel($num = 1, $table = 'carte', $data1 = 'car_img', $data2 = '
 ?>
 
 <div class="col-md-9 text-center">
-    <div class="row">
-        <div class="col-md-12">
+        <div class="row">
             <!-- image lien sur le caroussel -->
             <a data-toggle="modal" data-target=".carte-menu-modal-lg" href="#"><img class="img-fluid" src="images_bistrot/carte_printemps.jpg" alt="image_menu_saison"/></a>
         </div>
         <div class="col-md-12 mt-4 hidden text-center" id="events">
             <?php img( 1, 'banEvents', 'events_restau', 'eve_img', 'eve_alt', 'eve_oid', 'events' ); ?>
         </div>
+    <div class="row">
         <div class="col-md-8 mt-4">
             <div class="row">
                 <div class="col-md-6">
@@ -61,6 +61,7 @@ function imgCaroussel($num = 1, $table = 'carte', $data1 = 'car_img', $data2 = '
                 </div>
             </div>
         </div>
+    
         <div class="col-md">
             <div class="col-12 mt-3">
                 <div class="row text-center">
