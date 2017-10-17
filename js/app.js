@@ -3,7 +3,7 @@ $(window).ready(function(){
         $('#events').removeClass('hidden');
     };
 
-    if($('#titleEvent').html() !== "Pas d'évènement"){
+    if($('.imgEvent').attr('alt') !== "empty"){
         $('#buttonDeleteEvent').removeClass('hidden');
     } else {
         $('.imgEvent').addClass('hidden');
