@@ -12,7 +12,7 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
         if ($unlink) echo "suppression ok";
     }
 
-$sql = "UPDATE events_restau SET eve_title = 'Pas d\'évènement', eve_img = 'empty', eve_alt='empty' WHERE eve_oid >= 1";
+$sql = "UPDATE events_restau SET eve_title = 'Pas d\'évènement', eve_img = '', eve_alt='empty' WHERE eve_oid >= 1";
 $result = $conn->query($sql);
 }
 ?>

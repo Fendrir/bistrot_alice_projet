@@ -76,7 +76,7 @@ function upload($inputName, $lineId, $server = 'localhost', $user = 'root', $pwd
             }
           
             while ($row = $result->fetch_assoc()) {
-                if ($row['eve_img'] !== 'empty') {
+                if (!empty($row['eve_img'])){
                     $image = $row['eve_img'];
                     unlink($image);
                 }

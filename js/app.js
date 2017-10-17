@@ -7,5 +7,6 @@ $(window).ready(function(){
         $('#buttonDeleteEvent').removeClass('hidden');
     } else {
         $('.imgEvent').addClass('hidden');
+        $('.titleEvent').addClass('hidden');
     }
 });
