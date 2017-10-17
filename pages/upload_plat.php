@@ -50,21 +50,25 @@ var_dump($_FILES);
             $path = "images";                                                //Chemin pour diriger l'image
             $pathDB = "$path/$name";                                            //Concaténation du chemin + nom de l'image
             $resultat = move_uploaded_file($tmp_name, "$pathDB");    //Mouvement de l'image uploadée vers le fichier ciblé
-            if ($resultat) {        //Si tout est OK
+            if ($resultat) {        //Si tout est OK, mise à jour DB
+                $titre = $_POST['titre'];
+                $sql2 = "UPDATE plat SET pla_title = '$titre', pla_img = '$pathDB' WHERE pla_oid = '".$id."'";
+                $result2 = $conn->query($sql2);
                 ?>
                 <!-- Résumé du post -->
-                <div class="col-9 text-center">
-                    <h1>Evènement ajouté avec succès !</h1>
-
-                    <?php       //Mise à jour de la DB
-                    $titre = $_POST['titre'];
-                    $sql2 = "UPDATE plat SET pla_title = '$titre', pla_img = '$pathDB' WHERE pla_oid = '".$id."'";
-                    $result2 = $conn->query($sql2);
-                    ?>
-
-                    <h3><?= $_POST['titre'] ?></h3>
-                    <img src="<?= $pathDB ?>" alt="<?= $pathDB ?>"/>
-                    <a href="?p=administration">Retour à la page d'administration</a>
+                <div class="col-9 align-self-center text-center">
+                    <h1>Plat ajouté avec succès !</h1>
+                    <div class="col mt-5">
+                        <h3><?= $_POST['titre'] ?></h3>
+                    </div>
+                    <div class="col">
+                        <img class="taille" src="<?= $pathDB ?>" alt="<?= $pathDB ?>"/>
+                    </div>
+                    <div class="mt-3">
+                        <a href="?p=administration">
+                            <button class="btn btn-info">Retour à la page d'administration</button>
+                        </a>
+                    </div>
                 </div>
                 <!-- FIN Résumé du post -->
                 <?php
