@@ -59,7 +59,10 @@ input {
     font-size: 12px;
 }
 
-button {
-    width: 60%;
-    font-size: 50px;
-}
+.inline-form input {
+    
+      display: inline-block;
+    
+      width: 100px;
+    
+    }
