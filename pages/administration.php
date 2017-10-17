@@ -30,11 +30,11 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
                     <h4 id="titleEvent"><?= $row['eve_title'] ?></h4>
                 </div>
                 <div class="row mt-3">
-                    <div class="col">
+                    <div class="col-md-6">
                         <h5>Bannière de l'évènement</h5>
                         <img class="taille imgEvent" src="<?= $row['eve_img'] ?>" alt="<?= $row['eve_alt'] ?>"/>
                     </div>
-                    <div class="col">
+                    <div class="col-md-6">
                         <h5>Carte de l'évènement</h5>
                         <?php
                         while ($row2 = $result2->fetch_assoc()) {
