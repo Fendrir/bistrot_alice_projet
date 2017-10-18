@@ -76,8 +76,8 @@ function video($server = 'localhost', $user = 'root', $pwd = 'admin', $db = 'bis
                 </div>
             </div>
             <div class="col-md">
-                <div class="col-12 mt-3">
-                    <div class="row text-center">
+                <div class="col-12 mt-2">
+                    <div class="row text-center border p-2">
                         <p>Je suis la prez par ici Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam tempora natus quo eos error provident
                             quisquam reprehenderit sit asperiores libero ipsam aut ut, commodi minus, placeat facilis id earum quod? ipsum dolor sit amet
                             consectetur adipisicing elit.

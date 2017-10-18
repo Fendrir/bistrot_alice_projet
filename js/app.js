@@ -10,3 +10,12 @@ $(window).ready(function(){
         $('.titleEvent').addClass('hidden');
     }
 });
+
+$('.buttons-administration').children('li').children('button').click(function (){
+    var buttonId = $(this).attr('id');
+    if($('#'+ buttonId + 'Div').hasClass('hidden')){
+        $('#' + buttonId + 'Div').removeClass('hidden');
+    } else {
+
+    }
+});
