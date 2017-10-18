@@ -19,6 +19,7 @@ function img($num = 1, $id = 1, $table = 'plat', $data1 = 'pla_img', $data2 = 'p
             $result = $conn->query($sql);
             while ($row = $result->fetch_assoc()) {
                 echo '<img id="' . $id . '" class="taille img-fluid ' . $classImg . '" src="' . $row[$data1] . '" alt="' . $row[$data2] . '"/>';
+                echo '<div class="hvrbox">'.$row[$data2].'</div>';
             }
         }
     }
@@ -31,10 +32,19 @@ function imgCaroussel($num = 1, $table = 'carte', $data1 = 'car_img', $data2 = '
     $sql = "SELECT $data1, $data2 FROM $table WHERE $tableid = $num";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
-        echo '<img class="d-block img-fluid text-center hidden-xs-up" src="' . $row[$data1] . '" alt="' . $row[$data2] . '" style="height: 80%; width: auto">';
+        echo '<img class="d-block text-center img-perso" src="' . $row[$data1] . '" alt="' . $row[$data2] . '">';
     }
 }
 
+function video($server = 'localhost', $user = 'root', $pwd = 'admin', $db = 'bistrot')
+{
+    $conn = new mysqli($server, $user, $pwd, $db);
+    $sql = "SELECT vid_link FROM video WHERE vid_oid = 1";
+    $result = $conn->query($sql);
+    while ($row = $result->fetch_assoc()) {
+        echo '<iframe class="taillevideo text-center" src="https://www.youtube.com/embed/'.$row['vid_link'].'" frameborder="0" allowfullscreen></iframe>';
+    }
+}
 ?>
 
 <div class="col-md-9 text-center">
@@ -57,11 +67,10 @@ function imgCaroussel($num = 1, $table = 'carte', $data1 = 'car_img', $data2 = '
             </div>
             <div class="row">
                 <div class="col-md-12 text-center mt-4">
-                    <iframe class="taillevideo text-center" src="https://www.youtube.com/embed/T5UsrAxid74" frameborder="0" allowfullscreen></iframe>
+                    <?php video(); ?>
                 </div>
             </div>
         </div>
-    
         <div class="col-md">
             <div class="col-12 mt-3">
                 <div class="row text-center">
