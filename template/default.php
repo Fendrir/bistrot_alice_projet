@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.8.0/css/flag-icon.css">
     <link rel="stylesheet" href="../bistrot_alice_projet/node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="../bistrot_alice_projet/css/imageModal.css">
+    <link type="text/css" rel="stylesheet" href="../bistrot_alice_projet/css/hover-box.css">
     <link rel="stylesheet" href="../bistrot_alice_projet/css/style.css">
     <title>Le Bistrot d'Alice</title>
 </head>
