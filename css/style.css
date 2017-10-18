@@ -38,10 +38,13 @@ height: auto;
 }
 
 .taillevideo{
-
     width: 100%;
     height: 350px;
+}
 
+.taillevideo-admin {
+    width: 100%;
+    height: 30%;
 }
 
 
@@ -66,4 +69,20 @@ input {
 
 .button_admin {
     width: 60%;
+}
+
+.img-perso {
+    width: 250px;
+}
+
+.crop {
+    width: 100%;
+    height: 25%;
+    overflow: hidden;
+}
+
+.crop img {
+    width: 100%;
+    height: auto;
+    /*margin-top: -20%;*/
 }
