@@ -1,7 +1,3 @@
-Create database bistrot;
-
-use bistrot;
-
 create table admin
 (
   adm_oid int auto_increment
@@ -57,3 +53,15 @@ create index FK_carte_adm_oid
   on plat (adm_oid)
 ;
 
+insert into carte (car_oid) VALUES (1);
+insert into carte (car_oid) VALUES (2);
+insert into carte (car_oid) VALUES (3);
+
+insert into plat (pla_oid) VALUES (1);
+insert into plat (pla_oid) VALUES (2);
+insert into plat (pla_oid) VALUES (3);
+
+insert into events_restau (eve_oid) VALUES (1);
+insert into events_restau (eve_oid) VALUES (1);
+
+insert into video (vid_oid) VALUES (1);

@@ -5,8 +5,10 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
     $boutons = "";
 }
 if($_SESSION['nick'] === 'Franck'){
+
     $boutons = '<li class="nav-item align-self-center"><a class="nav-link" href="?p=administration"><div class="row-fluid btn_admin">Administrations </div></a></li>
-                <li class="nav-item align-self-center"><a class="nav-link" href="?p=deconnexion"><div class="row-fluid btn_deco test">Se déconnecter</div></a></li>';
+                <li class="nav-item align-self-center"><a class="nav-link" href="?p=deconnexion"><div class="row-fluid btn_deco">Se déconnecter</div></a></li>';
+
 }
 
 ?>
@@ -17,11 +19,7 @@ if($_SESSION['nick'] === 'Franck'){
         <nav class=" navbar-light" style="background-color: ;">
             
             <img class="img-fluid" src="../bistrot_alice_projet/images_bistrot/logo.png" alt="logo Bistro" sizes="" srcset="">
-            
-
-            <!-- ____________________________________________________________________________test________________________________________________________ -->
-            
-            
+ 
         <div class="container-fluid">
 
             <div class="row">
@@ -42,9 +40,6 @@ if($_SESSION['nick'] === 'Franck'){
                 </div>
             </div>
         </div>
-
-
-<!-- ____________________________________________________________________________test________________________________________________________ -->
 
 
             <div class="row justify-content-center">
