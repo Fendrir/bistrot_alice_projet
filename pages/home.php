@@ -78,10 +78,13 @@ function video($server = 'localhost', $user = 'root', $pwd = 'admin', $db = 'bis
             <div class="col-md">
                 <div class="col-12 mt-3">
                     <div class="row text-center">
-                        <p>Je suis la prez par ici Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam tempora natus quo eos error provident
-                            quisquam reprehenderit sit asperiores libero ipsam aut ut, commodi minus, placeat facilis id earum quod? ipsum dolor sit amet
-                            consectetur adipisicing elit.
-                            Numquam tempora natus quo eos error</p>
+                        <p>En hommage à sa grand-mère Alice, qui lui a transmis le goût de la bonne cuisine, 
+                        Franck Massiera vous reçoit au Bistrot d'Alice, un lieu convivial à la déco vintage à mi-chemin entre le 
+                        bistrot parisien et le bouchon lyonnais.
+                        </br>
+                        Vous mangerez à table ou sur le zinc du comptoir, profitant des saveurs simples de plats traditionnels faits maison, d'un bon verre de vin local... 
+                        Et aussi du spectacle de mise en cuisine par le chef et son équipe qui préparent et montent les assiettes devant vos yeux.
+                        </p>
                     </div>
                 </div>
                 <div class="row mt-2">
