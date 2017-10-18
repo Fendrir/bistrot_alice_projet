@@ -32,7 +32,7 @@ function imgCaroussel($num = 1, $table = 'carte', $data1 = 'car_img', $data2 = '
     $sql = "SELECT $data1, $data2 FROM $table WHERE $tableid = $num";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
-        echo '<img class="d-block text-center img-perso" src="' . $row[$data1] . '" alt="' . $row[$data2] . '">';
+        echo '<img class="d-block text-center img-fluid" src="' . $row[$data1] . '" alt="' . $row[$data2] . '">';
     }
 }
 
@@ -52,37 +52,42 @@ function video($server = 'localhost', $user = 'root', $pwd = 'admin', $db = 'bis
         <!-- image lien sur le caroussel -->
         <a data-toggle="modal" data-target=".carte-menu-modal-lg" href="#"><img class="img-fluid" src="images_bistrot/carte_printemps.jpg" alt="image_menu_saison"/></a>
     </div>
-    <div class="col-md-12 mt-4 hidden text-center" id="events">
+
+    <div class="row">
+        <div class="mt-4 hidden text-center crop" id="events">
             <?php img( 1, 'banEvents', 'events_restau', 'eve_img', 'eve_alt', 'eve_oid', 'events' ); ?>
         </div>
+    </div>
     <div class="row">
-        <div class="col-md-8 mt-4">
-            <div class="row">
-                <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-8 mt-4">
+                <div class="row">
+                    <div class="col-md-6 crop">
                     <?php img(1, 1); ?>
                 </div>
-                <div class="col-md-6 mt-md-0 mt-4">
+                    <div class="col-md-6 mt-md-0 mt-4 crop">
                     <?php img(2, 2); ?>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 text-center mt-4">
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center mt-4">
                     <?php video(); ?>
                 </div>
-            </div>
-        </div>
-        <div class="col-md">
-            <div class="col-12 mt-3">
-                <div class="row text-center">
-                    <p>Je suis la prez par ici Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam tempora natus quo eos error provident
-                        quisquam reprehenderit sit asperiores libero ipsam aut ut, commodi minus, placeat facilis id earum quod? ipsum dolor sit amet
-                        consectetur adipisicing elit.
-                        Numquam tempora natus quo eos error</p>
                 </div>
             </div>
-            <div class="row mt-2">
-                <div class="col-md-12">
+            <div class="col-md">
+                <div class="col-12 mt-3">
+                    <div class="row text-center">
+                        <p>Je suis la prez par ici Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam tempora natus quo eos error provident
+                            quisquam reprehenderit sit asperiores libero ipsam aut ut, commodi minus, placeat facilis id earum quod? ipsum dolor sit amet
+                            consectetur adipisicing elit.
+                            Numquam tempora natus quo eos error</p>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-12 crop">
                     <?php img(3, 3); ?>
+                </div>
                 </div>
             </div>
         </div>
@@ -96,8 +101,8 @@ function video($server = 'localhost', $user = 'root', $pwd = 'admin', $db = 'bis
 <!-- Large modal -->
 
 <div class="modal fade carte-menu-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
+    <div class="modal-dialog">
+        <div class="modal-content" data-dismiss="modal">
             <!-- Caroussel -->
             <div class="row">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -117,21 +122,21 @@ function video($server = 'localhost', $user = 'root', $pwd = 'admin', $db = 'bis
                         <div class="carousel-item">
                                 <?php imgCaroussel(3); ?>
                             </div>
-
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
                 </div>
             </div>
         </div>
+        <div class="col-12 mt-3">
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
     </div>
-</div>
 <!--Fin Modal-->
 </div>
 
