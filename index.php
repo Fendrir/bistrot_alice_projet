@@ -44,6 +44,12 @@ if($p === 'upload_plat'){
 if($p === 'upload_video'){
     include('pages/upload_video.php');
 }
+if($p === 'upload_prez'){
+    include('pages/upload_prez.php');
+}
+if($p === 'upload_identifiers'){
+    include('pages/upload_identifiers.php');
+}
 if($p === 'contact'){
     include('pages/contact.php');
 }

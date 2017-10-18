@@ -53,15 +53,20 @@ create index FK_carte_adm_oid
   on plat (adm_oid)
 ;
 
+create table video
+(
+  vid_oid int auto_increment
+    primary key,
+  vid_link varchar(1000) null
+)
+;
+
 insert into carte (car_oid) VALUES (1);
 insert into carte (car_oid) VALUES (2);
 insert into carte (car_oid) VALUES (3);
-
 insert into plat (pla_oid) VALUES (1);
 insert into plat (pla_oid) VALUES (2);
 insert into plat (pla_oid) VALUES (3);
-
 insert into events_restau (eve_oid) VALUES (1);
 insert into events_restau (eve_oid) VALUES (1);
-
 insert into video (vid_oid) VALUES (1);
