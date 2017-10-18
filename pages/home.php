@@ -22,7 +22,7 @@ function img($num = 1, $id = 1, $table = 'plat', $data1 = 'pla_img', $data2 = 'p
     $result2 = $conn->query($sql2);
     while ($row = $result->fetch_assoc()) {
         if($table === 'events_restau'){
-            echo '<img class="taille align-middle events img-fluid " src="' . $row[$data1] . '"';
+            echo '<img class="align-middle banEvent events img-fluid " src="' . $row[$data1] . '"';
             while ($row2 = $result2->fetch_assoc()) {
                 echo 'alt="' . $row2[$data2] . '">';
             }
@@ -31,7 +31,7 @@ function img($num = 1, $id = 1, $table = 'plat', $data1 = 'pla_img', $data2 = 'p
             $sql = "SELECT $data1, $data2 FROM $table WHERE $tableid = $num";
             $result = $conn->query($sql);
             while ($row = $result->fetch_assoc()) {
-                echo '<img id="' . $id . '" class="taille img-fluid ' . $classImg . '" src="' . $row[$data1] . '" alt="' . $row[$data2] . '"/>';
+                echo '<img id="' . $id . '" class="img-fluid ' . $classImg . '" src="' . $row[$data1] . '" alt="' . $row[$data2] . '"/>';
             }
         }
     }
@@ -81,7 +81,7 @@ function video($server = 'localhost', $user = 'root', $pwd = 'admin', $db = 'bis
     </div>
 
     <div class="row">
-        <div class="mt-4 hidden text-center crop" id="events">
+        <div class="mt-4 hidden text-center cropBan" id="events">
             <?php img( 1, 'banEvents', 'events_restau', 'eve_img', 'eve_alt', 'eve_oid', 'events' ); ?>
         </div>
     </div>
