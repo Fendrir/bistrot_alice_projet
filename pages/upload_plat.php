@@ -56,7 +56,7 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {       //Si le 
                 $result2 = $conn->query($sql2);
                 ?>
                 <!-- Résumé du post -->
-                <div class="col-9 align-self-center text-center">
+                <div class="col-9 align-self-center text-center border">
                     <h1>Plat ajouté avec succès !</h1>
                     <div class="col mt-5">
                         <h3><?= $_POST['titre'] ?></h3>
@@ -64,7 +64,7 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {       //Si le 
                     <div class="col">
                         <img class="taille" src="<?= $pathDB ?>" alt="<?= $pathDB ?>"/>
                     </div>
-                    <div class="mt-3">
+                    <div class="mt-3 mb-3">
                         <a href="?p=administration">
                             <button class="btn btn-info">Retour à la page d'administration</button>
                         </a>

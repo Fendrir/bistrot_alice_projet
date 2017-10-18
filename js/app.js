@@ -13,9 +13,6 @@ $(window).ready(function(){
 
 $('.buttons-administration').children('li').children('button').click(function (){
     var buttonId = $(this).attr('id');
-    if($('#'+ buttonId + 'Div').hasClass('hidden')){
-        $('#' + buttonId + 'Div').removeClass('hidden');
-    } else {
-
-    }
+    $('.divToHide').addClass('hidden');
+    $('.' + buttonId + 'Div').removeClass('hidden');
 });

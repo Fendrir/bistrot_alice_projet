@@ -12,23 +12,23 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
 
         while ($row = $result->fetch_assoc()) {
             ?>
-<!--            <div id="buttonEventDiv" class="hidden">-->
-                <div class="col-md-4 btn btn-warning">
-                    <form class="mt-3 btn btn-info" method="post" action="?p=uploadevent" enctype="multipart/form-data">
+            <div class="buttonEventDiv divToHide hidden row border">
+                <div class="col-md-7 align-self-center">
+                    <form class="mt-3" method="post" action="?p=uploadevent" enctype="multipart/form-data">
                         <h5 class="mt-3">Bannière de l'évènement</h5>
-                        <input class="btn btn-warning" type="file" name="banEvent" id="content" required/><br>
+                        <input class="btn btn-info" type="file" name="banEvent" id="content" required/><br>
                         <h5 class="mt-3">Image de l'évènement</h5>
-                        <input class="btn btn-warning" type="file" name="image" id="content" required/><br>
-                        <input class="input-group mt-3 text-center" type="text" name="titre" id="titre" placeholder="Nom de l'évènement" autocomplete="off"><br>
-                        <button class="btn btn-warning" type="submit">Envoyer</button>
+                        <input class="btn btn-info" type="file" name="image" id="content" required/><br>
+                        <input class="form-group mt-3 text-center inputName" type="text" name="titre" id="titre" placeholder="Nom de l'évènement" autocomplete="off"><br>
+                        <button class="btn btn-info" type="submit">Envoyer</button>
                     </form>
                     <form id="buttonDeleteEvent" class="hidden" action="?p=delete_event&id=1" method="post">
                         <button class="button_admin btn btn-danger">Supprimer</button>
                     </form>
                 </div>
-                <div class="col-md-4 align-self-center">
-                    <div class="col">
-                        <h4 id="titleEvent"><?= $row['eve_title'] ?></h4>
+                <div class="col-md-5 align-self-center">
+                    <div class="col mt-3">
+                        <i><h4 id="titleEvent"><?= $row['eve_title'] ?></h4></i>
                     </div>
                     <div class="row mt-3">
                         <div class="col-md-12 titleEvent crop">
@@ -45,27 +45,8 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
                         </div>
                     </div>
                 </div>
-<!--            </div>-->
-            <?php
-        }
-    }
-
-    function video($server = 'localhost', $user = 'root', $pwd = 'admin', $db = 'bistrot'){
-        $conn = new mysqli($server, $user, $pwd, $db);
-        $sql = "SELECT vid_link FROM video WHERE vid_oid = 1";
-        $result = $conn->query($sql);
-        while($row = $result->fetch_assoc()){
-            ?>
-            <div id="buttonVideoDiv" class="col-md-4 border btn btn-warning">
-            <h4>Vidéo</h4>
-            <form class="mt-3" method="post" action="?p=upload_video">
-                <h5><label for="videoLink">Lien de la vidéo</label></h5>
-                <input class="form-group" id="videoLink" name="videoLink" type="text" required><br>
-                <button class="button_admin btn btn-info" type="submit">Envoyer</button>
-            </form>
-            <h4>Aperçu</h4>
-            <iframe class="taillevideo-admin text-center" src="https://www.youtube.com/embed/<?= $row['vid_link'] ?>" frameborder="0" allowfullscreen></iframe>
             </div>
+
             <?php
         }
     }
@@ -81,21 +62,68 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
         $i = 1;
         while ($row = $result->fetch_assoc()) {
             ?>
-            <div id="<?= $globalDivTitle; ?>Div" class="col-md-4 border btn btn-warning">
-                <h4><?= $titleDiv . ' ' . $i; ?></h4>
-                <form class="mt-3" method="post" action="<?= $uploadURL . '&id=' . $i; ?>"
-                      enctype="multipart/form-data">
-                    <h5><?= $titleInputFile; ?></h5>
-                    <input class="btn btn-info" type="file" name="image" required/><br>
-                    <input class="form-group mt-3 text-center" type="text" name="titre" id="titre" placeholder="<?= $titleInput; ?>" autocomplete="off"><br>
-                    <button class="button_admin btn btn-info" type="submit">Envoyer</button>
-                </form>
-                <div class="col">
-                    <h4><?= $row[$title] ?></h4>
-                    <img class="taille img-fluid myImg align-middle" src="<?= $row[$img] ?>" alt="<?= $row[$title] ?>"/></div>
+            <div class="<?= $globalDivTitle; ?>Div divToHide hidden border row mb-3">
+                <div class="col-7 align-self-center mt-3">
+                    <h4><?= $titleDiv . ' ' . $i; ?> - <i><?= $row[$title] ?></i></h4>
+                    <form class="mt-3" method="post" action="<?= $uploadURL . '&id=' . $i; ?>"
+                          enctype="multipart/form-data">
+                        <h5><?= $titleInputFile; ?></h5>
+                        <input class="btn btn-info" type="file" name="image" required/><br>
+                        <input class="form-group mt-3 text-center inputName" type="text" name="titre" id="titre" placeholder="<?= $titleInput; ?>" autocomplete="off"><br>
+                        <button class="button_admin btn btn-info" type="submit">Envoyer</button>
+                    </form>
+                </div>
+                <div class="col-5 align-self-center">
+                    <img class="taille img-fluid myImg" src="<?= $row[$img] ?>" alt="<?= $row[$title] ?>"/>
+                </div>
             </div>
             <?php
             $i++;
+        }
+    }
+
+    function video($server = 'localhost', $user = 'root', $pwd = 'admin', $db = 'bistrot'){
+        $conn = new mysqli($server, $user, $pwd, $db);
+        $sql = "SELECT vid_link FROM video WHERE vid_oid = 1";
+        $result = $conn->query($sql);
+        while($row = $result->fetch_assoc()){
+            ?>
+            <div class="buttonVideoDiv divToHide hidden border row">
+                <div class="col-md-6 align-self-center">
+                    <h4>Vidéo</h4>
+                    <form class="mt-3" method="post" action="?p=upload_video">
+                        <input class="form-group inputName text-center" id="videoLink" name="videoLink" type="text" placeholder="ID de la vidéo" required><br>
+                        <button class="button_admin btn btn-info" type="submit">Envoyer</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <iframe class="taillevideo-admin mt-3 mb-3" src="https://youtube.com/embed/<?= $row['vid_link'] ?>" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <?php
+        }
+    }
+
+    function presentation($server = 'localhost', $user = 'root', $pwd = 'admin', $db = 'bistrot')
+    {
+        $conn = new mysqli($server, $user, $pwd, $db);
+        $sql = "SELECT pre_title, pre_content FROM presentation WHERE pre_oid = 1";
+        $result = $conn->query($sql);
+        while ($row = $result->fetch_assoc()) {
+            ?>
+            <div class="buttonPrezDiv divToHide hidden border row">
+                <div class="col-12">
+                    <form class="mt-3" method="post" action="?p=upload_prez">
+                        <h5><label for="prezTitle"></label></h5>
+                        <input class="form-group inputName text-center" type="text" id="prezTitle" name="prezTitle" placeholder="Titre de présentation (optionnel)">
+                        <h5 for="prezContent">Texte de présentation</h5>
+                <textarea class="form-group inputName texteAreaAdmin" id="prezContent" name="prezContent" rows="10" required><?= $row['pre_content'] ?></textarea>
+                <button class="button_admin btn btn-info mt-3" type="submit">Envoyer</button>
+                    </form>
+                </div>
+
+            </div>
+            <?php
         }
     }
 }
@@ -103,25 +131,28 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
 
 <div class="col-9 text-center">
     <div class="row">
-<!--        <div class="row ">-->
-<!---->
-<!--            <ul class="list-inline buttons-administration">-->
-<!--                <li><button id="buttonEvent" class="btn btn-success">Evènements</button></li>-->
-<!--                <li><button id="buttonVideo" class="btn btn-success">Vidéo</button></li>-->
-<!--                <li><button id="buttonCarte" class="btn btn-success">Cartes</button></li>-->
-<!--                <li><button id="buttonPlat" class="btn btn-success">Plats</button></li>-->
-<!--            </ul>-->
-<!--        </div>-->
-<!--        <div class="row">-->
+        <div class="col-12">
 
+            <ul class="list-inline buttons-administration">
+                <li class="list-inline-item mt-3"><button id="buttonEvent" class="btn btn-success">Evènements</button></li>
+                <li class="list-inline-item mt-3"><button id="buttonVideo" class="btn btn-success">Vidéo</button></li>
+                <li class="list-inline-item mt-3"><button id="buttonCarte" class="btn btn-success">Cartes</button></li>
+                <li class="list-inline-item mt-3"><button id="buttonPlat" class="btn btn-success">Plats</button></li>
+                <li class="list-inline-item mt-3"><button id="buttonDivers" class="btn btn-success">Divers</button></li>
+                <li class="list-inline-item mt-3"><button id="buttonPrez" class="btn btn-success">Présentation</button></li>
+            </ul>
+        </div>
+        <div class="col-12">
         <?php
         banEvent(); // GESTION DES EVENTS
         video();    // GESTION DE LA VIDEO
         multi();    // GESTION DES PLATS
         multi('buttonCarte', 'car_title', 'car_img', 'carte', 'car_oid',
             'Carte', 'Image de la carte', 'Nom de la carte', '?p=upload');  //GESTION DES CARTES
-
-        ?>
-<!--        </div>-->
+        multi('buttonDivers', 'ide_title', 'ide_content', 'identifiers', 'ide_oid',
+            'Divers', 'Image', 'Titre de l\'image', '?p=upload_identifiers');    // GESTION DES DIVERS
+        presentation();
+            ?>
+        </div>
     </div>
 </div>

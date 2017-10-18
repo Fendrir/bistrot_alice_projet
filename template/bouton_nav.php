@@ -9,17 +9,24 @@ if($_SESSION['nick'] === 'Franck'){
                 <li class="nav-item align-self-center"><a class="nav-link" href="?p=deconnexion"><button class="row-fluid btn btn-outline-danger test">Se déconnecter</button></a></li>';
 }
 
+function identifiers($server = 'localhost', $user = 'root', $pwd = 'admin', $db = 'bistrot')
+{
+    $conn = new mysqli($server, $user, $pwd, $db);
+    $sql = "SELECT ide_title, ide_content FROM identifiers WHERE ide_oid = 1";
+    $result = $conn->query($sql);
+    while ($row = $result->fetch_assoc()) {
+        echo '<img class="img-fluid" src="'.$row['ide_content'].'" alt="'.$row['ide_title'].'">';
+    }
+}
 ?>
 
 
     <div class="col-md-2">
         
     <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-
-    
-
-    <img class="img-fluid" src="../bistrot_alice_projet/images_bistrot/logo.png" alt="logo Bistro" sizes="" srcset="">
-
+        <?php
+        identifiers();
+        ?>
         <div class="row justify-content-center">
             <div class="col-auto">
                 <a href="https://www.facebook.com/LeBistrotDAlice/"><i class="fa fa-facebook-official fa-2x" aria-hidden="true" title="Facebook"></i></a> 

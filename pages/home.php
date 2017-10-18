@@ -1,4 +1,17 @@
 <?php
+function identifierBan($server = 'localhost', $user = 'root', $pwd = 'admin', $db = 'bistrot')
+{
+    $conn = new mysqli($server, $user, $pwd, $db);
+    $sql = "SELECT ide_title, ide_content FROM identifiers WHERE ide_oid = 2";
+    $result = $conn->query($sql);
+    while ($row = $result->fetch_assoc()) {
+        echo '<a data-toggle="modal" data-target=".carte-menu-modal-lg" href="#">
+                <img class="img-fluid" src="'.$row['ide_content'].'" alt="'.$row['ide_title'].'"/>
+              </a>
+';
+    }
+}
+
 function img($num = 1, $id = 1, $table = 'plat', $data1 = 'pla_img', $data2 = 'pla_title',
              $tableid = 'pla_oid', $classImg = 'myImg', $server = 'localhost', $user = 'root',
              $pwd = 'admin', $db = 'bistrot'){
@@ -19,7 +32,6 @@ function img($num = 1, $id = 1, $table = 'plat', $data1 = 'pla_img', $data2 = 'p
             $result = $conn->query($sql);
             while ($row = $result->fetch_assoc()) {
                 echo '<img id="' . $id . '" class="taille img-fluid ' . $classImg . '" src="' . $row[$data1] . '" alt="' . $row[$data2] . '"/>';
-                echo '<div class="hvrbox">'.$row[$data2].'</div>';
             }
         }
     }
@@ -33,6 +45,19 @@ function imgCaroussel($num = 1, $table = 'carte', $data1 = 'car_img', $data2 = '
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
         echo '<img class="d-block text-center img-fluid" src="' . $row[$data1] . '" alt="' . $row[$data2] . '">';
+    }
+}
+
+function presentation($server = 'localhost', $user = 'root', $pwd = 'admin', $db = 'bistrot')
+{
+    $conn = new mysqli($server, $user, $pwd, $db);
+    $sql = "SELECT pre_title, pre_content FROM presentation WHERE pre_oid = 1";
+    $result = $conn->query($sql);
+    while ($row = $result->fetch_assoc()) {
+        if(!empty($row['pre_title'])){
+        echo '<h5 class="col-12">'.$row['pre_title'].'</h5>';
+        }
+        echo '<p class="text-justify">'.$row['pre_content'].'</p>';
     }
 }
 
@@ -50,7 +75,9 @@ function video($server = 'localhost', $user = 'root', $pwd = 'admin', $db = 'bis
 <div class="col-md-9 text-center">
     <div class="row">
         <!-- image lien sur le caroussel -->
-        <a data-toggle="modal" data-target=".carte-menu-modal-lg" href="#"><img class="img-fluid" src="images_bistrot/carte_printemps.jpg" alt="image_menu_saison"/></a>
+        <?php
+        identifierBan();
+        ?>
     </div>
 
     <div class="row">
@@ -78,10 +105,9 @@ function video($server = 'localhost', $user = 'root', $pwd = 'admin', $db = 'bis
             <div class="col-md">
                 <div class="col-12 mt-2">
                     <div class="row text-center border p-2">
-                        <p>Je suis la prez par ici Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam tempora natus quo eos error provident
-                            quisquam reprehenderit sit asperiores libero ipsam aut ut, commodi minus, placeat facilis id earum quod? ipsum dolor sit amet
-                            consectetur adipisicing elit.
-                            Numquam tempora natus quo eos error</p>
+                        <?php
+                        presentation();
+                        ?>
                     </div>
                 </div>
                 <div class="row mt-2">
