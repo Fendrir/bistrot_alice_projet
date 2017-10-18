@@ -141,12 +141,13 @@ footer a:focus {
 	text-decoration: underline;
 
 .img-perso {
-    width: 250px;
+    max-height: 80%;
+    max-width: 80%;
 }
 
 .crop {
     width: 100%;
-    height: 25%;
+    max-height: 25%;
     overflow: hidden;
 }
 
