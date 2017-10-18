@@ -5,7 +5,7 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
     $boutons = "";
 }
 if($_SESSION['nick'] === 'Franck'){
-    $boutons = '<li class="nav-item align-self-center"><a class="nav-link" href="?p=administration"><button class="row-fluid btn btn-outline-success">Administrations </button></a></li>
+    $boutons = '<li class="nav-item align-self-center"><a class="nav-link" href="?p=administration"><button class="row-fluid btn btn-outline-success">Administrations</button></a></li>
                 <li class="nav-item align-self-center"><a class="nav-link" href="?p=deconnexion"><button class="row-fluid btn btn-outline-danger test">Se déconnecter</button></a></li>';
 }
 

@@ -41,6 +41,9 @@ if($p === 'delete_event'){
 if($p === 'upload_plat'){
     include('pages/upload_plat.php');
 }
+if($p === 'upload_video'){
+    include('pages/upload_video.php');
+}
 if($p === 'contact'){
     include('pages/contact.php');
 }
