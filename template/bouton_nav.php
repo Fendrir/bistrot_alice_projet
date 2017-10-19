@@ -17,22 +17,21 @@ function identifiers($server = 'localhost', $user = 'root', $pwd = 'admin', $db 
     $sql = "SELECT ide_title, ide_content FROM identifiers WHERE ide_oid = 1";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
-        echo '<img class="img-fluid" src="'.$row['ide_content'].'" alt="'.$row['ide_title'].'">';
+        echo '<img class="img-fluid logo" src="'.$row['ide_content'].'" alt="'.$row['ide_title'].'">';
     }
 }
 ?>
 
 <div class="col-md-2">
-    <nav class="row navbar-light" style="background-color: ;">
+    <nav class="row navbar-light">
         <div class="row">
-        <div class="col-12">
-
+            <div class="col-12">
         <?php
         identifiers();
         ?>
         </div>
         </div>
-        <div class="container-fluid whiteDiv p-3 mb-4">
+        <div class="container-fluid whiteDivNoTop p-3 mb-4">
             <div class="row">
                 <div class="col-md">
                     <ul class="navbar-nav">
@@ -45,17 +44,17 @@ function identifiers($server = 'localhost', $user = 'root', $pwd = 'admin', $db 
             </div>
             <div class="row justify-content-center">
                 <div class="col-auto">
-                    <a href="https://www.facebook.com/LeBistrotDAlice/"><i class="fa fa-facebook-official fa-2x" aria-hidden="true" title="Facebook"></i></a>
-                    <a href="https://twitter.com/franck11bistrot"><i class="fa fa-twitter-square fa-2x" aria-hidden="true" title="Twitter"></i></a>
+                    <a href="https://www.facebook.com/LeBistrotDAlice/" target="_blank"><i class="fa fa-facebook-official fa-2x" aria-hidden="true" title="Facebook"></i></a>
+                    <a href="https://twitter.com/franck11bistrot" target="_blank"><i class="fa fa-twitter-square fa-2x" aria-hidden="true" title="Twitter"></i></a>
                     <a href="https://www.tripadvisor.fr/Restaurant_Review-g187151-d11909210-Reviews-Le_Bistrot_D_Alice-Carcassonne_Aude_Occitanie.html" target="_blank"><i class="fa fa-tripadvisor fa-2x" aria-hidden="true" title="TripAdvisor"></i></a>
                 </div>
             </div>
-<!--            <div class="row justify-content-center">-->
-<!--                <div class="col-auto">-->
-<!--                    <img class="img-fluid flag-icon" src="node_modules/flag-icon-css/flags/1x1/fr.svg" alt="Français" title="Français">-->
-<!--                    <img class="img-fluid flag-icon" src="node_modules/flag-icon-css/flags/1x1/gb.svg" alt="Anglais" title="English">-->
-<!--                </div>-->
-<!--            </div>-->
+            <!--            <div class="row justify-content-center">-->
+            <!--                <div class="col-auto">-->
+            <!--                    <img class="img-fluid flag-icon" src="node_modules/flag-icon-css/flags/1x1/fr.svg" alt="Français" title="Français">-->
+            <!--                    <img class="img-fluid flag-icon" src="node_modules/flag-icon-css/flags/1x1/gb.svg" alt="Anglais" title="English">-->
+            <!--                </div>-->
+            <!--            </div>-->
         </div>
     </nav>
 </div>

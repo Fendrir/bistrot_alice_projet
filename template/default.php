@@ -17,22 +17,15 @@
 
 <!-- Image Modal Part -->
 <div id="myModal" class="modal2 closeImg">
-
-    <!-- where image is showed -->
     <img id="imgModal" class="modal-content2">
-
-    <!-- where caption will pop, based on alt of src -->
     <div id="caption"></div>
 </div>
 <!-- FIN Image Modal Part -->
 
 <div class="container">
-
     <div class="row justify-content-around">
     <?php include('bouton_nav.php') ?>
         <?php echo $content; ?>
-        <!--<?php echo $_SESSION['nick']; ?>-->
-
     </div>
     <!-- correspond à la fin de la div du row des boutons nav_bar -->
 

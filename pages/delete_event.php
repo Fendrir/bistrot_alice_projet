@@ -15,7 +15,7 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
 }
 ?>
 
-<div class="col-9 align-self-center text-center">
+<div class="col-9 whiteDiv align-self-center text-center">
     <div class="mt-3">
         <h1>Evènement supprimé</h1>
         <p class="mt-5">Vous allez être redirigé automatiquement dans 3 secondes.</p>

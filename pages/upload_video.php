@@ -3,7 +3,7 @@ $nickSession = $_SESSION['nick'];
 if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickSession, ENT_QUOTES) !== 'Franck') {       //Si le user est arrivé ici par "hasard"
     ?>
     <!-- Erreur -->
-    <div class="col-9 align-self-center text-center">
+    <div class="col-9 whiteDiv align-self-center text-center">
         <h1>Erreur !</h1>
         <p>Veuillez réessayer svp</p>
         <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">Retour à la page précédente</a>
@@ -16,7 +16,7 @@ if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickS
     $result = $conn->query($sql);
     ?>
     <!-- Résumé du post -->
-    <div class="col-9 align-self-center text-center border">
+    <div class="col-9 whiteDiv align-self-center text-center border">
         <h1>Vidéo ajoutée avec succès !</h1>
         <div class="col mt-5">
             <iframe class="taillevideo text-center" src="https://www.youtube.com/embed/<?= $videoLink ?>" frameborder="0"

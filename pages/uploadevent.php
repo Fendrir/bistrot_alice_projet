@@ -3,7 +3,7 @@ $nickSession = $_SESSION['nick'];
 if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickSession, ENT_QUOTES) !== 'Franck') {       //Si le user est arrivé ici par "hasard"
     ?>
     <!-- Erreur -->
-    <div class="col-9 align-self-center text-center">
+    <div class="col-9 whiteDiv align-self-center text-center">
         <h1>Erreur !</h1>
         <p>Veuillez réessayer svp</p>
         <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">Retour à la page précédente</a>
@@ -14,7 +14,7 @@ if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickS
     if(htmlspecialchars($_FILES['banEvent']['size'], ENT_QUOTES) !== 0 || htmlspecialchars($_FILES['image']['size'], ENT_QUOTES) !== 0){
         ?>
         <!-- Résumé du post -->
-        <div class="col-9 align-self-center text-center border">
+        <div class="col-9 whiteDiv align-self-center text-center border">
             <h1>Evènement ajouté avec succès !</h1>
             <div class="col mb-3">
                 <h3><?= $_POST['titre'] ?></h3>
@@ -40,7 +40,7 @@ if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickS
         <?php
     } else {
         ?>
-        <div class="col-9 align-self-center text-center">
+        <div class="col-9 whiteDiv align-self-center text-center">
             <h1>Erreur !</h1>
             <p>Veuillez réessayer svp</p>
             <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">Retour à la page précédente</a>
@@ -60,7 +60,7 @@ function upload($inputName, $lineId, $server = 'localhost', $user = 'root', $pwd
     if (htmlspecialchars($_FILES[$inputName]['error'] , ENT_QUOTES)> 0) {        //S'il y a eu des erreurs lors de l'upload
         ?>
         <!-- Erreur -->
-        <div class="col-9 align-self-center text-center">
+        <div class="col-9 whiteDiv align-self-center text-center">
             <h1>Erreur !</h1>
             <p>Veuillez réessayer svp</p>
             <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">Retour à la page précédente</a>
@@ -108,7 +108,7 @@ function upload($inputName, $lineId, $server = 'localhost', $user = 'root', $pwd
         } else {
             ?>
             <!-- Erreur -->
-            <div class="col-9 align-self-center text-center">
+            <div class="col-9 whiteDiv align-self-center text-center">
                 <h1>Erreur !</h1>
                 <p>Mauvais format d'image !</p>
                 <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">Retour à la page précédente</a>
