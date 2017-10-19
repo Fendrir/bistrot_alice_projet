@@ -1,6 +1,15 @@
 <?php
-if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
-    echo 'erreur lolilol';
+$nickSession = $_SESSION['nick'];
+if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickSession, ENT_QUOTES) !== 'Franck') {       //Si le user est arrivé ici par "hasard"
+    ?>
+    <!-- Erreur -->
+    <div class="col-9 align-self-center text-center">
+        <h1>Erreur !</h1>
+        <p>Veuillez réessayer svp</p>
+        <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">Retour à la page précédente</a>
+    </div>
+    <!-- FIN Erreur -->
+    <?php
 } else {
     function banEvent($server = 'localhost', $user = 'root', $pwd = 'admin', $db = 'bistrot')
     {
@@ -46,7 +55,6 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
                     </div>
                 </div>
             </div>
-
             <?php
         }
     }
@@ -117,8 +125,8 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
                         <h5><label for="prezTitle"></label></h5>
                         <input class="form-group inputName text-center" type="text" id="prezTitle" name="prezTitle" placeholder="Titre de présentation (optionnel)">
                         <h5 for="prezContent">Texte de présentation</h5>
-                <textarea class="form-group inputName texteAreaAdmin" id="prezContent" name="prezContent" rows="10" required><?= $row['pre_content'] ?></textarea>
-                <button class="button_admin btn btn-info mt-3" type="submit">Envoyer</button>
+                        <textarea class="form-group inputName texteAreaAdmin" id="prezContent" name="prezContent" rows="10" required><?= $row['pre_content'] ?></textarea>
+                        <button class="button_admin btn btn-info mt-3" type="submit">Envoyer</button>
                     </form>
                 </div>
 
