@@ -18,7 +18,7 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
             <p><?= $prezContent ?></p>
         </div>
         <div class="mt-3 mb-3">
-            <a href="?p=administration">
+            <a href="?p=administration&div=buttonPrezDiv">
                 <button class="btn btn-info">Retour à la page d'administration</button>
             </a>
         </div>
