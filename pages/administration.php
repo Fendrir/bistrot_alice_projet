@@ -73,7 +73,7 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
                         <button class="button_admin btn btn-info" type="submit">Envoyer</button>
                     </form>
                 </div>
-                <div class="col-5 align-self-center">
+                <div class="col-5 align-self-center mt-3 mb-3">
                     <img class="taille img-fluid myImg" src="<?= $row[$img] ?>" alt="<?= $row[$title] ?>"/>
                 </div>
             </div>
