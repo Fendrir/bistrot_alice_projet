@@ -3,7 +3,7 @@ $nickSession = $_SESSION['nick'];
 if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickSession, ENT_QUOTES) !== 'Franck') {       //Si le user est arrivé ici par "hasard"
     ?>
     <!-- Erreur -->
-    <div class="col-9 align-self-center text-center">
+    <div class="col-9 whiteDiv align-self-center text-center">
         <h1>Erreur !</h1>
         <p>Veuillez réessayer svp</p>
         <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">Retour à la page précédente</a>
@@ -19,7 +19,7 @@ if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickS
     if (htmlspecialchars($_FILES['image']['error'] , ENT_QUOTES)> 0) {        //S'il y a eu des erreurs lors de l'upload
         ?>
         <!-- Erreur -->
-        <div class="col-9 align-self-center text-center">
+        <div class="col-9 whiteDiv align-self-center text-center">
             <h1>Erreur !</h1>
             <p>Veuillez réessayer svp</p>
             <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">Retour à la page précédente</a>
@@ -57,7 +57,7 @@ if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickS
                 $result2 = $conn->query($sql2);
                 ?>
                 <!-- Résumé du post -->
-                <div class="col-9 align-self-center text-center border">
+                <div class="col-9 whiteDiv align-self-center text-center border">
                     <h1>Image ajoutée avec succès !</h1>
                     <div class="col mt-5">
                         <h3><?= htmlspecialchars($_POST['titre'], ENT_QUOTES) ?></h3>
@@ -77,7 +77,7 @@ if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickS
         } else {
             ?>
             <!-- Erreur -->
-            <div class="col-9 align-self-center text-center">
+            <div class="col-9 whiteDiv align-self-center text-center">
                 <h1>Erreur !</h1>
                 <p>Mauvais format d'image !</p>
                 <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">Retour à la page précédente</a>

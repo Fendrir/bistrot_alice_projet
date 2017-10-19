@@ -142,12 +142,12 @@ if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickS
         <div class="col-12">
 
             <ul class="list-inline buttons-administration">
-                <li class="list-inline-item mt-3"><button id="buttonEvent" class="btn btn-success">Evènements</button></li>
-                <li class="list-inline-item mt-3"><button id="buttonVideo" class="btn btn-success">Vidéo</button></li>
-                <li class="list-inline-item mt-3"><button id="buttonCarte" class="btn btn-success">Cartes</button></li>
-                <li class="list-inline-item mt-3"><button id="buttonPlat" class="btn btn-success">Plats</button></li>
-                <li class="list-inline-item mt-3"><button id="buttonDivers" class="btn btn-success">Divers</button></li>
-                <li class="list-inline-item mt-3"><button id="buttonPrez" class="btn btn-success">Présentation</button></li>
+                <li class="list-inline-item mt-3"><button id="buttonEvent" class="btn btn-info">Evènements</button></li>
+                <li class="list-inline-item mt-3"><button id="buttonVideo" class="btn btn-info">Vidéo</button></li>
+                <li class="list-inline-item mt-3"><button id="buttonCarte" class="btn btn-info">Cartes</button></li>
+                <li class="list-inline-item mt-3"><button id="buttonPlat" class="btn btn-info">Plats</button></li>
+                <li class="list-inline-item mt-3"><button id="buttonDivers" class="btn btn-info">Divers</button></li>
+                <li class="list-inline-item mt-3"><button id="buttonPrez" class="btn btn-info">Présentation</button></li>
             </ul>
         </div>
         <div class="col-12">

@@ -59,7 +59,7 @@ if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickS
                 $conn->query($sql2);
                 ?>
                 <!-- Résumé du post -->
-                <div class="col-9 align-self-center text-center border">
+                <div class="col-9 whiteDiv align-self-center text-center border">
                     <h1>Carte ajoutée avec succès !</h1>
                     <div class="col mt-5">
                         <h3><?= htmlspecialchars($_POST['titre'], ENT_QUOTES) ?></h3>

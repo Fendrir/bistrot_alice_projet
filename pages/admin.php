@@ -9,8 +9,8 @@ $nickPost = htmlspecialchars($_POST['nick'], ENT_QUOTES);
 
 if ($nickPost === $nick && password_verify(htmlspecialchars($_POST['pwd'], ENT_QUOTES), $pwd)) {
     ?>
-    <div class="col-9 mt-5 text-center">
-        <h1 class="mt-5">Bienvenue <?= $nick; ?> !</h1>
+    <div class="col-9 whiteDiv align-self-center text-center">
+        <h1>Bienvenue <?= $nick; ?> !</h1>
         <p class="mt-5">Vous allez être redirigé automatiquement dans 3 secondes.</p>
         <p>Si rien ne se passe, <a href="?p=administration">vous pouvez cliquer ici.</a></p>
     </div>
@@ -18,7 +18,7 @@ if ($nickPost === $nick && password_verify(htmlspecialchars($_POST['pwd'], ENT_Q
     <?php $_SESSION['nick'] = $nick;
 } else {
     ?>
-    <div class="col-9 mt-5 text-center">
+    <div class="col-9 whiteDiv align-self-center text-center">
         <h1>Erreur !</h1>
         <h3 class="mt-5">Mauvais identifiant/mot de passe !</h3>
         <p class="mt-5">Vous allez être redirigé automatiquement dans 3 secondes.</p>
