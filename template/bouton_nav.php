@@ -6,8 +6,8 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
 }
 if($_SESSION['nick'] === 'Franck'){
 
-    $boutons = '<li class="nav-item align-self-center"><a class="nav-link" href="?p=administration"><div class="row-fluid btn_admin">Administrations </div></a></li>
-                <li class="nav-item align-self-center"><a class="nav-link" href="?p=deconnexion"><div class="row-fluid btn_deco">Se déconnecter</div></a></li>';
+    $boutons = '<li class="nav-item align-self-center"><a class="nav-link" href="?p=administration"><div id="administration" class="row-fluid btn_admin">Administrations </div></a></li>
+                <li class="nav-item align-self-center"><a class="nav-link" href="?p=deconnexion"><div id="deconnexion" class="row-fluid btn_deco">Se déconnecter</div></a></li>';
 
 }
 
@@ -40,9 +40,9 @@ function identifiers($server = 'localhost', $user = 'root', $pwd = 'admin', $db 
 
                     <ul class="navbar-nav">
 
-                        <li class="nav-item align-self-center"><a class="nav-link" href="?p=home"><div class="row btn_bordeau">Accueil</div></a></li>
+                        <li class="nav-item align-self-center"><a class="nav-link" href="?p=home"><div id="home" class="row btn_bordeau">Accueil</div></a></li>
 
-                        <li class="nav-item align-self-center"><a class="nav-link" href="?p=contact"><div class="row btn_bordeau">Contact</div></a></li>
+                        <li class="nav-item align-self-center"><a class="nav-link" href="?p=contact"><div id="contact" class="row btn_bordeau">Contact</div></a></li>
 
                          <li class="nav-item"><a class="nav-link" href="?p=connexion">Connexion</a></li>
 
