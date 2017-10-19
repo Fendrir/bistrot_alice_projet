@@ -29,10 +29,10 @@ if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickS
                         <h5 class="mt-3">Image de l'évènement</h5>
                         <input class="btn btn-info" type="file" name="image" id="content" required/><br>
                         <input class="form-group mt-3 text-center inputName" type="text" name="titre" id="titre" placeholder="Nom de l'évènement" autocomplete="off"><br>
-                        <button class="btn btn-info" type="submit">Envoyer</button>
+                        <button class="btn btn-info form-group" type="submit">Envoyer</button>
                     </form>
                     <form id="buttonDeleteEvent" class="hidden" action="?p=delete_event&id=1" method="post">
-                        <button class="button_admin btn btn-danger">Supprimer</button>
+                        <button class="button_admin btn btn-info">Supprimer</button>
                     </form>
                 </div>
                 <div class="col-md-5 align-self-center">
