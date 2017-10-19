@@ -67,7 +67,7 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {       //Si le 
                         <img class="taille" src="<?= $pathDB ?>" alt="<?= $pathDB ?>"/>
                     </div>
                     <div class="mt-3 mb-3">
-                            <a href="?p=administration">
+                            <a href="?p=administration&div=buttonCarteDiv">
                                 <button class="btn btn-info">Retour à la page d'administration</button>
                             </a>
                     </div>
