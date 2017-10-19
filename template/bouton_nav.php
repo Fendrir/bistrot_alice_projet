@@ -44,7 +44,7 @@ function identifiers($server = 'localhost', $user = 'root', $pwd = 'admin', $db 
 
                         <li class="nav-item align-self-center"><a class="nav-link" href="?p=contact"><div class="row btn_bordeau">Contact</div></a></li>
 
-                        <!-- <li class="nav-item"><a class="nav-link" href="?p=connexion">Connexion</a></li> -->
+                         <li class="nav-item"><a class="nav-link" href="?p=connexion">Connexion</a></li>
 
                         <?php echo $boutons; ?>
 
@@ -58,7 +58,7 @@ function identifiers($server = 'localhost', $user = 'root', $pwd = 'admin', $db 
             <div class="row justify-content-center">
                 <div class="col-auto">
                     <a href="https://www.facebook.com/LeBistrotDAlice/"><i class="fa fa-facebook-official fa-2x" aria-hidden="true" title="Facebook"></i></a> 
-                    <a href="https://twitter.com/"><i class="fa fa-twitter-square fa-2x" aria-hidden="true" title="Twitter"></i></a>
+                    <a href="https://twitter.com/franck11bistrot"><i class="fa fa-twitter-square fa-2x" aria-hidden="true" title="Twitter"></i></a>
                     <a href="https://www.tripadvisor.fr/Restaurant_Review-g187151-d11909210-Reviews-Le_Bistrot_D_Alice-Carcassonne_Aude_Occitanie.html" target="_blank"><i class="fa fa-tripadvisor fa-2x" aria-hidden="true" title="TripAdvisor"></i></a>
                 </div>
             </div>
