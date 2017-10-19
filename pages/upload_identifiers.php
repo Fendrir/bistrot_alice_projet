@@ -32,15 +32,13 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {       //Si le 
         //3. strtolower met l'extension en minuscules.
         $extension_upload = strtolower(substr(strrchr($_FILES['image']['name'], '.'), 1));
         if(in_array($extension_upload, $extensions_valides)) {     //Si l'extension du fichier correspond aux formats jpg, jpeg, gif ou png
-            $sql = "SELECT car_title, car_img FROM carte WHERE car_oid = '".$id."'"; //Select de la row de l'event
+            $sql = "SELECT ide_title, ide_content FROM identifiers WHERE ide_oid = '".$id."'"; //Select de la row de l'event
             $result = $conn->query($sql);
 
             // Suppression de l'ancienne image sur le serveur
             while ($row = $result->fetch_assoc()) {
-                if(!empty($row['car_img'])){
-                    $image = $row['car_img'];
-                    unlink($image);
-                }
+                $image = $row['ide_content'];
+                $unlink = unlink($image);
             }
 
             if (!is_dir('images')) {        //Si le dossier images n'existe pas on le créer
@@ -48,18 +46,18 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {       //Si le 
             }
 
             $tmp_name = $_FILES['image']['tmp_name'];                           //Récupération du chemin de l'image uploadée
-            $name = 'carte' . $id . $_FILES['image']['name'];                   //Modification du nom de l'image pour la rendre unique sur le serveur
+            $name = 'identifiers' . $id . $_FILES['image']['name'];                   //Modification du nom de l'image pour la rendre unique sur le serveur
             $path = "images";                                                //Chemin pour diriger l'image
             $pathDB = "$path/$name";                                            //Concaténation du chemin + nom de l'image
             $resultat = move_uploaded_file($tmp_name, "$pathDB");    //Mouvement de l'image uploadée vers le fichier ciblé
-            if ($resultat) {        //Si tout est OK, mise à jour de la DB
+            if ($resultat) {        //Si tout est OK, mise à jour DB
                 $titre = $_POST['titre'];
-                $sql2 = "UPDATE carte SET car_title = '$titre', car_img = '$pathDB' WHERE car_oid = $id";
-                $conn->query($sql2);
+                $sql2 = "UPDATE identifiers SET ide_title = '$titre', ide_content = '$pathDB' WHERE ide_oid = '".$id."'";
+                $result2 = $conn->query($sql2);
                 ?>
                 <!-- Résumé du post -->
                 <div class="col-9 align-self-center text-center border">
-                    <h1>Carte ajoutée avec succès !</h1>
+                    <h1>Image ajoutée avec succès !</h1>
                     <div class="col mt-5">
                         <h3><?= $_POST['titre'] ?></h3>
                     </div>
@@ -67,9 +65,9 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {       //Si le 
                         <img class="taille" src="<?= $pathDB ?>" alt="<?= $pathDB ?>"/>
                     </div>
                     <div class="mt-3 mb-3">
-                            <a href="?p=administration">
-                                <button class="btn btn-info">Retour à la page d'administration</button>
-                            </a>
+                        <a href="?p=administration">
+                            <button class="btn btn-info">Retour à la page d'administration</button>
+                        </a>
                     </div>
                 </div>
                 <!-- FIN Résumé du post -->

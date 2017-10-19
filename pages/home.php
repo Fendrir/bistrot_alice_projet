@@ -1,4 +1,17 @@
 <?php
+function identifierBan($server = 'localhost', $user = 'root', $pwd = 'admin', $db = 'bistrot')
+{
+    $conn = new mysqli($server, $user, $pwd, $db);
+    $sql = "SELECT ide_title, ide_content FROM identifiers WHERE ide_oid = 2";
+    $result = $conn->query($sql);
+    while ($row = $result->fetch_assoc()) {
+        echo '<a data-toggle="modal" data-target=".carte-menu-modal-lg" href="#">
+                <img class="img-fluid" src="'.$row['ide_content'].'" alt="'.$row['ide_title'].'"/>
+              </a>
+';
+    }
+}
+
 function img($num = 1, $id = 1, $table = 'plat', $data1 = 'pla_img', $data2 = 'pla_title',
              $tableid = 'pla_oid', $classImg = 'myImg', $server = 'localhost', $user = 'root',
              $pwd = 'admin', $db = 'bistrot'){
@@ -9,7 +22,7 @@ function img($num = 1, $id = 1, $table = 'plat', $data1 = 'pla_img', $data2 = 'p
     $result2 = $conn->query($sql2);
     while ($row = $result->fetch_assoc()) {
         if($table === 'events_restau'){
-            echo '<img class="taille align-middle events img-fluid " src="' . $row[$data1] . '"';
+            echo '<img class="align-middle banEvent events img-fluid " src="' . $row[$data1] . '"';
             while ($row2 = $result2->fetch_assoc()) {
                 echo 'alt="' . $row2[$data2] . '">';
             }
@@ -18,8 +31,7 @@ function img($num = 1, $id = 1, $table = 'plat', $data1 = 'pla_img', $data2 = 'p
             $sql = "SELECT $data1, $data2 FROM $table WHERE $tableid = $num";
             $result = $conn->query($sql);
             while ($row = $result->fetch_assoc()) {
-                echo '<img id="' . $id . '" class="taille img-fluid ' . $classImg . '" src="' . $row[$data1] . '" alt="' . $row[$data2] . '"/>';
-                echo '<div class="hvrbox">'.$row[$data2].'</div>';
+                echo '<img id="' . $id . '" class="img-fluid ' . $classImg . '" src="' . $row[$data1] . '" alt="' . $row[$data2] . '"/>';
             }
         }
     }
@@ -33,6 +45,19 @@ function imgCaroussel($num = 1, $table = 'carte', $data1 = 'car_img', $data2 = '
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
         echo '<img class="d-block text-center img-fluid" src="' . $row[$data1] . '" alt="' . $row[$data2] . '">';
+    }
+}
+
+function presentation($server = 'localhost', $user = 'root', $pwd = 'admin', $db = 'bistrot')
+{
+    $conn = new mysqli($server, $user, $pwd, $db);
+    $sql = "SELECT pre_title, pre_content FROM presentation WHERE pre_oid = 1";
+    $result = $conn->query($sql);
+    while ($row = $result->fetch_assoc()) {
+        if(!empty($row['pre_title'])){
+        echo '<h5 class="col-12">'.$row['pre_title'].'</h5>';
+        }
+        echo '<p class="text-justify">'.$row['pre_content'].'</p>';
     }
 }
 
@@ -50,11 +75,13 @@ function video($server = 'localhost', $user = 'root', $pwd = 'admin', $db = 'bis
 <div class="col-md-9 text-center">
     <div class="row">
         <!-- image lien sur le caroussel -->
-        <a data-toggle="modal" data-target=".carte-menu-modal-lg" href="#"><img class="img-fluid" src="images_bistrot/carte_printemps.jpg" alt="image_menu_saison"/></a>
+        <?php
+        identifierBan();
+        ?>
     </div>
 
     <div class="row">
-        <div class="mt-4 hidden text-center crop" id="events">
+        <div class="mt-4 hidden text-center cropBan" id="events">
             <?php img( 1, 'banEvents', 'events_restau', 'eve_img', 'eve_alt', 'eve_oid', 'events' ); ?>
         </div>
     </div>
@@ -76,6 +103,7 @@ function video($server = 'localhost', $user = 'root', $pwd = 'admin', $db = 'bis
                 </div>
             </div>
             <div class="col-md">
+<<<<<<< HEAD
                 <div class="col-12 mt-3">
                     <div class="row text-center">
                         <p>En hommage à sa grand-mère Alice, qui lui a transmis le goût de la bonne cuisine, 
@@ -85,6 +113,13 @@ function video($server = 'localhost', $user = 'root', $pwd = 'admin', $db = 'bis
                         Vous mangerez à table ou sur le zinc du comptoir, profitant des saveurs simples de plats traditionnels faits maison, d'un bon verre de vin local... 
                         Et aussi du spectacle de mise en cuisine par le chef et son équipe qui préparent et montent les assiettes devant vos yeux.
                         </p>
+=======
+                <div class="col-12 mt-2">
+                    <div class="row text-center border p-2">
+                        <?php
+                        presentation();
+                        ?>
+>>>>>>> 62bf5f536fd3005a611451579d319f298daef714
                     </div>
                 </div>
                 <div class="row mt-2">

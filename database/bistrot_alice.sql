@@ -70,6 +70,15 @@ create index FK_events_adm_oid
 
 ;
 
+create table identifiers
+(
+  ide_oid int auto_increment
+    primary key,
+  ide_title varchar(500) null,
+  ide_content varchar(2000) null
+)
+;
+
 create table plat
 
 (
@@ -114,17 +123,38 @@ create table video
 
 ;
 
+create table presentation
+(
+  pre_oid int auto_increment
+    primary key,
+  pre_title varchar(50) null,
+  pre_content text null
+)
+;
+
+create table video
+(
+  vid_oid int auto_increment
+    primary key,
+  vid_link varchar(1000) null
+)
+;
+
 insert into carte (car_oid) VALUES (1);
 
 insert into carte (car_oid) VALUES (2);
 
 insert into carte (car_oid) VALUES (3);
-
+insert into events_restau (eve_oid) VALUES (1);
+insert into events_restau (eve_oid) VALUES (2);
+insert into identifiers (ide_oid) VALUES (1);
+insert into identifiers (ide_oid) VALUES (2);
 insert into plat (pla_oid) VALUES (1);
 
 insert into plat (pla_oid) VALUES (2);
 
 insert into plat (pla_oid) VALUES (3);
+<<<<<<< HEAD
 
 insert into events_restau (eve_oid) VALUES (1);
 
@@ -132,3 +162,7 @@ insert into events_restau (eve_oid) VALUES (2);
 
 insert into video (vid_oid) VALUES (1);
 
+=======
+insert into presentation (pre_oid) VALUES (1);
+insert into video (vid_oid) VALUES (1);
+>>>>>>> 62bf5f536fd3005a611451579d319f298daef714
