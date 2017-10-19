@@ -1,3 +1,7 @@
+drop database if exists bistrot;
+create database bistrot;
+Use bistrot;
+
 create table admin
 (
   adm_oid int auto_increment
