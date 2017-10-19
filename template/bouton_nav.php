@@ -44,7 +44,7 @@ function identifiers($server = 'localhost', $user = 'root', $pwd = 'admin', $db 
 
                         <li class="nav-item align-self-center"><a class="nav-link" href="?p=contact"><div class="row btn_bordeau">Contact</div></a></li>
 
-                        <!-- <li class="nav-item"><a class="nav-link" href="?p=connexion">Connexion</a></li> -->
+                         <li class="nav-item"><a class="nav-link" href="?p=connexion">Connexion</a></li>
 
                         <?php echo $boutons; ?>
 

@@ -31,7 +31,13 @@ function img($num = 1, $id = 1, $table = 'plat', $data1 = 'pla_img', $data2 = 'p
             $sql = "SELECT $data1, $data2 FROM $table WHERE $tableid = $num";
             $result = $conn->query($sql);
             while ($row = $result->fetch_assoc()) {
+                echo '<div class="hvrbox">';
+                echo '<div class="hvrbox-layer_bottom">';
                 echo '<img id="' . $id . '" class="img-fluid ' . $classImg . '" src="' . $row[$data1] . '" alt="' . $row[$data2] . '"/>';
+                echo '<div class="hvrbox-layer_top hvrbox-layer_slidedown">';
+                echo '<div class="hvrbox-text">'.$row[$data2].'</div>'.'</div>';
+                echo '</div>';
+                echo '</div>';
             }
         }
     }

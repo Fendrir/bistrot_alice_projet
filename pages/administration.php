@@ -67,7 +67,7 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
                     <h4><?= $titleDiv . ' ' . $i; ?> - <i><?= $row[$title] ?></i></h4>
                     <form class="mt-3" method="post" action="<?= $uploadURL . '&id=' . $i; ?>"
                           enctype="multipart/form-data">
-                        <h5><?= $titleInputFile; ?></h5>
+                        <h5 class="mb-2"><?= $titleInputFile; ?></h5>
                         <input class="btn btn-info" type="file" name="image" required/><br>
                         <input class="form-group mt-3 text-center inputName" type="text" name="titre" id="titre" placeholder="<?= $titleInput; ?>" autocomplete="off"><br>
                         <button class="button_admin btn btn-info" type="submit">Envoyer</button>

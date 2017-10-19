@@ -1,6 +1,6 @@
-CREATE DATABASE bistrot;
-
-use bistrot;
+drop database if exists bistrot;
+create database bistrot;
+Use bistrot;
 
 create table admin
 
@@ -109,20 +109,6 @@ create index FK_carte_adm_oid
 
 ;
 
-create table video
-
-(
-
-  vid_oid int auto_increment
-
-    primary key,
-
-  vid_link varchar(1000) null
-
-)
-
-;
-
 create table presentation
 (
   pre_oid int auto_increment
@@ -154,15 +140,5 @@ insert into plat (pla_oid) VALUES (1);
 insert into plat (pla_oid) VALUES (2);
 
 insert into plat (pla_oid) VALUES (3);
-<<<<<<< HEAD
-
-insert into events_restau (eve_oid) VALUES (1);
-
-insert into events_restau (eve_oid) VALUES (2);
-
-insert into video (vid_oid) VALUES (1);
-
-=======
 insert into presentation (pre_oid) VALUES (1);
 insert into video (vid_oid) VALUES (1);
->>>>>>> 62bf5f536fd3005a611451579d319f298daef714
