@@ -255,6 +255,7 @@ footer a {
 footer a:hover,
 footer a:focus {
 	text-decoration: underline;
+}
 
 .img-perso {
     max-height: 80%;
