@@ -15,8 +15,9 @@ $('img').click(function(){
     }
 });
 
-$('.hvrbox-layer_bottom').click(function(){
-    var image = $(this).children('img');
+$('.hvrbox').click(function(){
+    var image = $(this).children('div').children('img');
+    console.log(image)
     if(image.hasClass('myImg')){
         //Showing the block with .myModal id
         $('#myModal').css("display", "block");
