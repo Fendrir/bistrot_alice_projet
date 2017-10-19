@@ -109,23 +109,11 @@ function video($server = 'localhost', $user = 'root', $pwd = 'admin', $db = 'bis
                 </div>
             </div>
             <div class="col-md">
-<<<<<<< HEAD
-                <div class="col-12 mt-3">
-                    <div class="row text-center">
-                        <p>En hommage à sa grand-mère Alice, qui lui a transmis le goût de la bonne cuisine, 
-                        Franck Massiera vous reçoit au Bistrot d'Alice, un lieu convivial à la déco vintage à mi-chemin entre le 
-                        bistrot parisien et le bouchon lyonnais.
-                        </br>
-                        Vous mangerez à table ou sur le zinc du comptoir, profitant des saveurs simples de plats traditionnels faits maison, d'un bon verre de vin local... 
-                        Et aussi du spectacle de mise en cuisine par le chef et son équipe qui préparent et montent les assiettes devant vos yeux.
-                        </p>
-=======
                 <div class="col-12 mt-2">
                     <div class="row text-center border p-2">
                         <?php
                         presentation();
                         ?>
->>>>>>> 62bf5f536fd3005a611451579d319f298daef714
                     </div>
                 </div>
                 <div class="row mt-2">
