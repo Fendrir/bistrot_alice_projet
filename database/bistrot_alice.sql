@@ -136,9 +136,7 @@ insert into events_restau (eve_oid) VALUES (2);
 insert into identifiers (ide_oid) VALUES (1);
 insert into identifiers (ide_oid) VALUES (2);
 insert into plat (pla_oid) VALUES (1);
-
 insert into plat (pla_oid) VALUES (2);
-
 insert into plat (pla_oid) VALUES (3);
 insert into presentation (pre_oid) VALUES (1);
 insert into video (vid_oid) VALUES (1);
