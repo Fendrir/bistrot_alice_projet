@@ -32,3 +32,14 @@ function GetURLParameter(sParam) {
 
 var backToTheDiv = GetURLParameter('div');
 $('.' + backToTheDiv).removeClass('hidden');
+
+// ------------------------------------------ mis en place des class menu navbar ------------------------------------------
+
+
+var trucbidule = GetURLParameter('p');
+if (!trucbidule){
+
+    $('#home').addClass('active');    
+
+}
+$('#' + trucbidule).addClass('active');
