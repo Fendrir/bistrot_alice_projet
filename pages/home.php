@@ -61,7 +61,7 @@ function presentation($server = 'localhost', $user = 'root', $pwd = 'admin', $db
         if(!empty($row['pre_title'])){
             echo '<h5 class="col-12">'.$row['pre_title'].'</h5>';
         }
-        echo '<p class="text-justify">'.$row['pre_content'].'</p>';
+        echo '<p class="text-center">'.$row['pre_content'].'</p>';
     }
 }
 
@@ -108,7 +108,7 @@ function video($server = 'localhost', $user = 'root', $pwd = 'admin', $db = 'bis
             </div>
             <div class="col-md">
                 <div class="col-12 mt-2">
-                    <div class="row text-center border p-2">
+                    <div class="whiteDiv row text-center border p-2">
                         <?php
                         presentation();
                         ?>

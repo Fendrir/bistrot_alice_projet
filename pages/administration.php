@@ -21,7 +21,7 @@ if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickS
 
         while ($row = $result->fetch_assoc()) {
             ?>
-            <div class="buttonEventDiv divToHide hidden row border">
+            <div class="buttonEventDiv divToHide whiteDiv hidden row border">
                 <div class="col-md-7 align-self-center">
                     <form class="mt-3" method="post" action="?p=uploadevent" enctype="multipart/form-data">
                         <h5 class="mt-3">Bannière de l'évènement</h5>
@@ -42,13 +42,13 @@ if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickS
                     <div class="row mt-3">
                         <div class="col-md-12 titleEvent crop">
                             <h5>Bannière de l'évènement</h5>
-                            <img class="taille myImg imgEvent" src="<?= $row['eve_img'] ?>" alt="<?= $row['eve_alt'] ?>"/>
+                            <img class="img-fluid myImg imgEvent" src="<?= $row['eve_img'] ?>" alt="<?= $row['eve_alt'] ?>"/>
                         </div>
-                        <div class="col-md-12 titleEvent crop mt-4 mb-4">
+                        <div class="col-md-12 titleEvent mt-4 mb-4">
                             <h5>Carte de l'évènement</h5>
                             <?php
                             while ($row2 = $result2->fetch_assoc()) {
-                                echo '<img class="taille myImg imgEvent" alt="'.$row2['eve_img'].'" src="'.$row2['eve_img'].'"/>';
+                                echo '<img class="img-fluid myImg imgEvent" alt="'.$row2['eve_img'].'" src="'.$row2['eve_img'].'"/>';
                             }
                             ?>
                         </div>
@@ -70,7 +70,7 @@ if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickS
         $i = 1;
         while ($row = $result->fetch_assoc()) {
             ?>
-            <div class="<?= $globalDivTitle; ?>Div divToHide hidden border row mb-3">
+            <div class="<?= $globalDivTitle; ?>Div divToHide whiteDiv hidden border row mb-3">
                 <div class="col-7 align-self-center mt-3">
                     <h4><?= $titleDiv . ' ' . $i; ?> - <i><?= $row[$title] ?></i></h4>
                     <form class="mt-3" method="post" action="<?= $uploadURL . '&id=' . $i; ?>"
@@ -96,7 +96,7 @@ if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickS
         $result = $conn->query($sql);
         while($row = $result->fetch_assoc()){
             ?>
-            <div class="buttonVideoDiv divToHide hidden border row">
+            <div class="buttonVideoDiv divToHide whiteDiv hidden border row">
                 <div class="col-md-6 align-self-center">
                     <h4>Vidéo</h4>
                     <form class="mt-3" method="post" action="?p=upload_video">
@@ -119,7 +119,7 @@ if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickS
         $result = $conn->query($sql);
         while ($row = $result->fetch_assoc()) {
             ?>
-            <div class="buttonPrezDiv divToHide hidden border row">
+            <div class="buttonPrezDiv divToHide whiteDiv hidden border row">
                 <div class="col-12">
                     <form class="mt-3" method="post" action="?p=upload_prez">
                         <h5><label for="prezTitle"></label></h5>
