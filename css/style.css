@@ -1,34 +1,21 @@
-/* @media only screen and (min-width: 768px) and (max-width: 991px) {
-	.tm-2-col-textbox-2 { margin-right: 15px; }
-	#google-map { height: 520px; }
-} */
+body {
+    padding: 2% 0 2% 0;
+    background-image: url('../images/background.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
 
-/*!* Extra small devices (portrait phones, less than 576px) *!*/
-/*@media (max-width: 575px) { ... }*/
-
-/*!* Small devices (landscape phones, less than 768px) *!*/
-/*@media (max-width: 767px) { ... }*/
-
-/*!* Medium devices (tablets, less than 992px) *!*/
-/*@media (max-width: 991px) { ... }*/
-
-/*!* Large devices (desktops, less than 1200px) *!*/
-/*@media (max-width: 1199px) { ... }*/
-
-
-.row [class^="col-"] {
-
-    /* background-color: #eee;
-    border: 1px solid #ddd;
-    background-color: rgba(86,61,124,.15);
-    border: 1px solid rgba(86,61,124,.2); */
 }
 
+img {}
 
-/* div {
-    border: 1px solid black;
-} */
-
+.whiteDiv {
+    background-color: rgba(255,255,255, 0.75);
+    color: rgb(162,35,53);
+    padding: 5%;
+    letter-spacing: 0.1px;
+    font-size: 14.5px;
+}
 
 .taillevideo{
     width: 100%;
@@ -196,7 +183,7 @@ input {
  */
  
  body, p, a, h1, h2, h3, h4, h5, h6, div {
-    font-family: "Open Sans", sans-serif !important;
+    font-family: "copperPlate", sans-serif !important;
 	margin: 0;
 }
 
