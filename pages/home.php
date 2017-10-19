@@ -7,8 +7,7 @@ function identifierBan($server = 'localhost', $user = 'root', $pwd = 'admin', $d
     while ($row = $result->fetch_assoc()) {
         echo '<a data-toggle="modal" data-target=".carte-menu-modal-lg" href="#">
                 <img class="img-fluid" src="'.$row['ide_content'].'" alt="'.$row['ide_title'].'"/>
-              </a>
-';
+              </a>';
     }
 }
 
@@ -26,7 +25,6 @@ function img($num = 1, $id = 1, $table = 'plat', $data1 = 'pla_img', $data2 = 'p
             while ($row2 = $result2->fetch_assoc()) {
                 echo 'alt="' . $row2[$data2] . '">';
             }
-
         } else {
             $sql = "SELECT $data1, $data2 FROM $table WHERE $tableid = $num";
             $result = $conn->query($sql);
@@ -61,7 +59,7 @@ function presentation($server = 'localhost', $user = 'root', $pwd = 'admin', $db
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
         if(!empty($row['pre_title'])){
-        echo '<h5 class="col-12">'.$row['pre_title'].'</h5>';
+            echo '<h5 class="col-12">'.$row['pre_title'].'</h5>';
         }
         echo '<p class="text-justify">'.$row['pre_content'].'</p>';
     }
@@ -169,7 +167,7 @@ function video($server = 'localhost', $user = 'root', $pwd = 'admin', $db = 'bis
             </a>
         </div>
     </div>
-<!--Fin Modal-->
+    <!--Fin Modal-->
 </div>
 
 

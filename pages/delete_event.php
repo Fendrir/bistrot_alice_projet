@@ -18,8 +18,8 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
 <div class="col-9 align-self-center text-center">
     <div class="mt-3">
         <h1>Evènement supprimé</h1>
-        <p class="mt-5">Vous allez être redirigé automatiquement dans 5 secondes.</p>
-        <p>Si rien ne se passe, <a href="?p=administration">vous pouvez cliquer ici.</a></p>
+        <p class="mt-5">Vous allez être redirigé automatiquement dans 3 secondes.</p>
+        <p>Si rien ne se passe, <a href="?p=administration&div=buttonEventDiv">vous pouvez cliquer ici.</a></p>
     </div>
 </div>
-<meta http-equiv="refresh" content="5; URL=?p=administration">
+<meta http-equiv="refresh" content="5; URL=?p=administration&div=buttonEventDiv">

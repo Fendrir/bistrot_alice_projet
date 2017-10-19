@@ -1,9 +1,17 @@
 <?php
-if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
-    echo 'erreur lolilol';
-
+$nickSession = $_SESSION['nick'];
+if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickSession, ENT_QUOTES) !== 'Franck') {       //Si le user est arrivé ici par "hasard"
+    ?>
+    <!-- Erreur -->
+    <div class="col-9 align-self-center text-center">
+        <h1>Erreur !</h1>
+        <p>Veuillez réessayer svp</p>
+        <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">Retour à la page précédente</a>
+    </div>
+    <!-- FIN Erreur -->
+    <?php
 } else {
-    $videoLink = $_POST['videoLink'];
+    $videoLink = htmlspecialchars($_POST['videoLink'], ENT_QUOTES);
     $sql = "UPDATE video SET vid_link = '$videoLink' WHERE vid_oid = 1";
     $result = $conn->query($sql);
     ?>
