@@ -1,16 +1,17 @@
 <?php
-
+//Vérification du login pour l'affichage des boutons d'administration
 if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
     $_SESSION['nick'] = 'Invité';
     $boutons = "";
 }
 if($_SESSION['nick'] === 'Franck'){
-
+    //Si l'admin est co les boutons s'affichent
     $boutons = '<a id="administration" class="menuButtonAdmin" href="?p=administration"><li class="align-self-center">Administration</li></a>
                 <a id="deconnexion"  class="menuButtonDeco" href="?p=deconnexion"><li class="align-self-center">Se déconnecter</li></a>';
 
 }
 
+//Pour afficher le logo
 function identifiers($server = 'localhost', $user = 'root', $pwd = 'admin', $db = 'bistrot')
 {
     $conn = new mysqli($server, $user, $pwd, $db);
@@ -18,7 +19,7 @@ function identifiers($server = 'localhost', $user = 'root', $pwd = 'admin', $db 
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
         echo '<a href="?p=home" alt="Accueil">';
-        echo '<img class="img-fluid logo whiteDivNoBot" src="'.$row['ide_content'].'" alt="'.$row['ide_title'].'">';
+        echo '<img class="img-fluid logo whiteDiv whiteDivNoBot" src="'.$row['ide_content'].'" alt="'.$row['ide_title'].'">';
         echo '</a>';
     }
 }
@@ -33,7 +34,7 @@ function identifiers($server = 'localhost', $user = 'root', $pwd = 'admin', $db 
         ?>
         </div>
         </div>
-        <div class="container-fluid whiteDivNoTop p-3 mb-4">
+        <div class="container-fluid whiteDiv whiteDivNoTop p-3 mb-4">
             <div class="col">
                 <ul class="navbar-nav row">
                     <a id="home" class="menuButton" href="?p=home"><li class="align-self-center">Accueil</li></a>

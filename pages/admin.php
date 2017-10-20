@@ -10,12 +10,12 @@ $nickPost = htmlspecialchars($_POST['nick'], ENT_QUOTES);
 if ($nickPost === $nick && password_verify(htmlspecialchars($_POST['pwd'], ENT_QUOTES), $pwd)) {
     ?>
     <div class="col-9 whiteDiv align-self-center text-center">
-        <h1>Bienvenue <?= $nick; ?> !</h1>
+        <h1>Bienvenue Franck !</h1>
         <p class="mt-5">Vous allez être redirigé automatiquement dans 3 secondes.</p>
         <p>Si rien ne se passe, <a href="?p=administration">vous pouvez cliquer ici.</a></p>
     </div>
     <meta http-equiv="refresh" content="3; URL=?p=administration">
-    <?php $_SESSION['nick'] = $nick;
+    <?php $_SESSION['nick'] = 'Franck';
 } else {
     ?>
     <div class="col-9 whiteDiv align-self-center text-center">
