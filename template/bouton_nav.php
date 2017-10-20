@@ -6,8 +6,8 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
 }
 if($_SESSION['nick'] === 'Franck'){
 
-    $boutons = '<li class="nav-item align-self-center"><a class="nav-link" href="?p=administration"><div id="administration" class="row-fluid btn_admin">Administrations </div></a></li>
-                <li class="nav-item align-self-center"><a class="nav-link" href="?p=deconnexion"><div id="deconnexion" class="row-fluid btn_deco">Se déconnecter</div></a></li>';
+    $boutons = '<a id="administration" class="menuButtonAdmin" href="?p=administration"><li class="align-self-center">Administration</li></a>
+                <a id="deconnexion"  class="menuButtonDeco" href="?p=deconnexion"><li class="align-self-center">Se déconnecter</li></a>';
 
 }
 
@@ -17,7 +17,9 @@ function identifiers($server = 'localhost', $user = 'root', $pwd = 'admin', $db 
     $sql = "SELECT ide_title, ide_content FROM identifiers WHERE ide_oid = 1";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
-        echo '<img class="img-fluid logo" src="'.$row['ide_content'].'" alt="'.$row['ide_title'].'">';
+        echo '<a href="?p=home" alt="Accueil">';
+        echo '<img class="img-fluid logo whiteDivNoBot" src="'.$row['ide_content'].'" alt="'.$row['ide_title'].'">';
+        echo '</a>';
     }
 }
 ?>
@@ -32,22 +34,26 @@ function identifiers($server = 'localhost', $user = 'root', $pwd = 'admin', $db 
         </div>
         </div>
         <div class="container-fluid whiteDivNoTop p-3 mb-4">
-            <div class="row">
-                <div class="col-md">
-                    <ul class="navbar-nav">
-                        <li class="nav-item align-self-center"><a class="nav-link" href="?p=home"><div id="home" class="row btn_bordeau">Accueil</div></a></li>
-                        <li class="nav-item align-self-center"><a class="nav-link" href="?p=contact"><div id="contact" class="row btn_bordeau">Contact</div></a></li>
-                        <!--                        <li class="nav-item"><a class="nav-link" href="?p=connexion">Connexion</a></li>-->
-                        <?php echo $boutons; ?>
-                    </ul>
-                </div>
+            <div class="col">
+                <ul class="navbar-nav row">
+                    <a id="home" class="menuButton" href="?p=home"><li class="align-self-center">Accueil</li></a>
+                    <a id="contact" class="menuButton" href="?p=contact"><li class="align-self-center">Contact</li></a>
+                    <!--                        <li class="nav-item"><a class="nav-link" href="?p=connexion">Connexion</a></li>-->
+                    <?php echo $boutons; ?>
+                </ul>
             </div>
             <div class="row justify-content-center">
                 <div class="col-auto">
                     <a href="https://www.facebook.com/LeBistrotDAlice/" target="_blank"><i class="fa fa-facebook-official fa-2x" aria-hidden="true" title="Facebook"></i></a>
-                    <a href="https://twitter.com/franck11bistrot" target="_blank"><i class="fa fa-twitter-square fa-2x" aria-hidden="true" title="Twitter"></i></a>
-                    <a href="https://www.tripadvisor.fr/Restaurant_Review-g187151-d11909210-Reviews-Le_Bistrot_D_Alice-Carcassonne_Aude_Occitanie.html" target="_blank"><i class="fa fa-tripadvisor fa-2x" aria-hidden="true" title="TripAdvisor"></i></a>
+                    <a href="https://twitter.com/franck11bistrot" target="_blank"><i class="fa fa-twitter-square fa-2x ml-2" aria-hidden="true" title="Twitter"></i></a>
+                    <a href="https://www.tripadvisor.fr/Restaurant_Review-g187151-d11909210-Reviews-Le_Bistrot_D_Alice-Carcassonne_Aude_Occitanie.html" target="_blank"><i class="fa fa-tripadvisor fa-2x ml-2" aria-hidden="true" title="TripAdvisor"></i></a>
                 </div>
+            </div>
+            <div class="col-md text-center d-none d-md-block">
+                <img class="img-fluid" src="images/FaitMaison.png"/>
+            </div>
+            <div class="col-md text-center d-block d-sm-block d-md-none  mt-2">
+                <img class="img-fluid-2" src="images/FaitMaison.png"/>
             </div>
             <!--            <div class="row justify-content-center">-->
             <!--                <div class="col-auto">-->

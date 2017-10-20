@@ -53,7 +53,11 @@ if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickS
             $resultat = move_uploaded_file($tmp_name, "$pathDB");    //Mouvement de l'image uploadée vers le fichier ciblé
             if ($resultat) {        //Si tout est OK, mise à jour DB
                 $titre = htmlspecialchars($_POST['titre'], ENT_QUOTES);
-                $sql2 = "UPDATE identifiers SET ide_title = '$titre', ide_content = '$pathDB' WHERE ide_oid = '".$id."'";
+                if($id === '1'){
+                    $sql2 = "UPDATE identifiers SET ide_title = 'Logo', ide_content = '$pathDB' WHERE ide_oid = 1";
+                } else {
+                    $sql2 = "UPDATE identifiers SET ide_title = 'Bannière', ide_content = '$pathDB' WHERE ide_oid = 2";
+                }
                 $result2 = $conn->query($sql2);
                 ?>
                 <!-- Résumé du post -->

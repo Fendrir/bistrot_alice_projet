@@ -14,6 +14,10 @@ $(window).ready(function(){
 $('.buttons-administration').children('li').children('button').click(function (){
     var buttonId = $(this).attr('id');
     $('.divToHide').addClass('hidden');
+    $('.inputName').removeClass('hidden');
+    if(buttonId === 'buttonDivers'){
+        $('.inputName').addClass('hidden');
+    }
     $('.' + buttonId + 'Div').removeClass('hidden');
 });
 
@@ -32,6 +36,9 @@ function GetURLParameter(sParam) {
 
 var backToTheDiv = GetURLParameter('div');
 $('.' + backToTheDiv).removeClass('hidden');
+if(backToTheDiv === 'buttonDiversDiv'){
+    $('.inputName').addClass('hidden');
+}
 
 var menuButtonId = GetURLParameter('p');
 if (!menuButtonId){

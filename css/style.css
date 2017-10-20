@@ -4,14 +4,17 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-
+    font-family: "copperPlate", sans-serif !important;
+    margin: 0;
 }
 
 a, a:active, a:visited {
     color: #A22335;
+    text-decoration: none;
 }
 a:hover{
     color: #56131C;
+    text-decoration: none;
 }
 
 .logo {
@@ -35,7 +38,15 @@ a:hover{
     font-size: 14.5px;
 }
 
+.whiteDivNoBot {
+    border-radius: 5px 5px 0 0;
+    background-color: rgba(255,255,255, 0.75);
+    color: rgb(162,35,53);
+    padding-bottom: 10%;
+}
+
 .btn-info, .btn-info:hover {
+    font-size: 0.8em;
     background-color: #A22335;
     border: 1px solid #A22335;
 }
@@ -60,7 +71,7 @@ a:hover{
 
 .map{
     height: 430px;
-    width: 100%;  
+    width: 100%;
 }
 
 .hidden {
@@ -85,205 +96,131 @@ input {
     width: 30%;
 }
 
-
 /* boutons menu rouge bordeau */
-
-.btn_bordeau{
-    color: #a12938;
+.menuButton{
+    border-radius: 5px;
     background-color: transparent;
     background-image: none;
-    border-color: #a12938;
-    display: inline-block;
-    font-weight: normal;
+    border-color: #A22335;
     text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
     transition: all 0.15s ease-in-out;
-    padding: 0.5rem 3.75rem;
-    font-size: 1rem;
-
+    width: 100%;
+    font-size: 1.5rem;
+    margin-bottom: 5%;
 }
-  
-  .btn_bordeau:hover {
+
+.menuButton li {
+    color: #A22335;
+}
+
+.menuButton li:hover {
+    color: white;
+    transition: all 0.15s ease-in-out;
+}
+
+.menuButton:hover {
     color: #fff;
-    background-color: #a12938;
-    border-color: #a12938;
-  }
+    background-color: #A22335;
+    border-color: #A22335;
+}
 
-  .btn_bordeau:focus, .btn_bordeau.focus {
-    box-shadow: 0 0 0 3px rgba(135, 51, 56, 0.5);
-  }
-  
-  .btn_bordeau.disabled, .btn_bordeau:disabled {
-    color: #a12938;
-    background-color: transparent;
-  }
-  
-  .btn_bordeau:active, .btn_bordeau.active,
-  .show > .btn_bordeau.dropdown-toggle {
+.menuButton:active, .menuButton.active,
+.show > .menuButton.dropdown-toggle {
     color: #fff;
-    background-color: #a12938;
-    border-color: #a12938;
-  }
+    background-color: #A22335;
+    border-color: #A22335;
+}
 
-  /* bouton menu administration */
+.menuButton.active li {
+    color: white;
+}
 
-  .btn_admin{
-    color: #28a745;
+/* bouton menu administration */
+
+.menuButtonAdmin{
+    border-radius: 5px;
     background-color: transparent;
     background-image: none;
-    border-color: #28a745;
-    display: inline-block;
-    font-weight: normal;
     text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
     transition: all 0.15s ease-in-out;
-    padding: 0.5rem 2rem;
-    font-size: 1rem;
-
+    width: 100%;
+    font-size: 1.2rem;
+    margin-bottom: 5%;
 }
-  
-  .btn_admin:hover {
+
+.menuButtonAdmin li {
+    color: #23821b;
+}
+
+.menuButtonAdmin li:hover {
+    color: white;
+    transition: all 0.15s ease-in-out;
+}
+
+.menuButtonAdmin:hover {
     color: #fff;
-    background-color: #28a745;
-    border-color: #28a745;
-  }
+    background-color: #23821b;
+    border-color: #23821b;
+}
 
-  .btn_admin:focus, .btn_admin.focus {
-    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.5);
-  }
-  
-  .btn_admin.disabled, .btn_admin:disabled {
-    color: #28a745;
-    background-color: transparent;
-  }
-  
-  .btn_admin:active, .btn_admin.active,
-  .show > .btn_admin.dropdown-toggle {
+.menuButtonAdmin:active, .menuButtonAdmin.active,
+.show > .menuButton.dropdown-toggle {
     color: #fff;
-    background-color: #28a745;
-    border-color: #28a745;
-  }
+    background-color: #23821b;
+    border-color: #23821b;
+}
 
-  /* boutons déconnexion */
+.menuButtonAdmin.active li {
+    color: white;
+}
 
-  .btn_deco{
-    color: #dc3545;
+/* boutons déconnexion */
+
+.menuButtonDeco{
+    border-radius: 5px;
     background-color: transparent;
     background-image: none;
-    border-color: #dc3545;
-    display: inline-block;
-    font-weight: normal;
     text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
     transition: all 0.15s ease-in-out;
-    padding: 0.5rem 2rem;
-    font-size: 1rem;
-
+    width: 100%;
+    font-size: 1.2rem;
+    margin-bottom: 5%;
 }
-  
-  .btn_deco:hover {
+
+.menuButtonDeco li {
+    color: #d60612;
+}
+
+.menuButtonDeco li:hover {
+    color: white;
+}
+
+.menuButtonDeco:hover {
     color: #fff;
-    background-color: #dc3545;
-    border-color: #dc3545;
-  }
+    background-color: #d60612;
+    border-color: #d60612;
+}
 
-  .btn_deco:focus, .btn_deco.focus {
-    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.5);
-  }
-  
-  .btn_deco.disabled, .btn_deco:disabled {
-    color: #dc3545;
-    background-color: transparent;
-  }
-  
-  .btn_deco:active, .btn_deco.active,
-  .show > .btn_deco.dropdown-toggle {
+.menuButtonDeco:active, .menuButtonDeco.active,
+.show > .menuButton.dropdown-toggle {
     color: #fff;
-    background-color: #dc3545;
-    border-color: #dc3545;
-  }
-
-/*  Hover Box
- * 	Author: Piotr Elmanowski
- *  Company: Frontoes.com
- *  Distributed and described: css-workshop.com
- *	v1.0
- */
- 
- body, p, a, h1, h2, h3, h4, h5, h6, div {
-    font-family: "copperPlate", sans-serif !important;
-	margin: 0;
-}
-
-header {
-	background: #009FDA none repeat scroll 0% 0%;
-	box-shadow: 0px 0px 4px rgba(84, 84, 84, 0.5);
-	padding: 5px 15px;
-	color: #fff;
-	text-align: center;
-	overflow: hidden;
-}
-header img {
-	height: 50px;
-	float: left;
-}
-header h1 {
-	text-transform: uppercase;
-	font-weight: 400;
-	font-size: 26px;
-	line-height: 48px;
+    background-color: #d60612;
+    border-color: #d60612;
 }
 
 .content h1, .content  h2, .content  h3 {
-	margin: 15px 0 0px 0;
+    margin: 15px 0 0px 0;
 }
 
 .content {
-	max-width: 1200px;
-	margin: 50px auto 0 auto;
-	width: 100%;
-}
-
-pre {
-	background: #F2F2F2 none repeat scroll 0% 0%;
-	font-size: 15px;
-	padding: 10px;
-	border-radius: 3px;
-	margin: 10px 0;
-	white-space: pre-wrap;
-	-ms-tab-size:    4;
-	-moz-tab-size:    4;
-    -o-tab-size:      4;
-    tab-size:         4;
-}
-
-footer {
-	background: #000;
-	color: #fff;
-	padding: 10px;
-	font-size: 13px;
-}
-footer a {
-	color: inherit;
-	text-decoration: none;
-}
-footer a:hover,
-footer a:focus {
-	text-decoration: underline;
+    max-width: 1200px;
+    margin: 50px auto 0 auto;
+    width: 100%;
 }
 
 .img-perso {
     max-height: 80%;
     max-width: 80%;
-}
-
-.cropBan {
-    width: 100%;
-    max-height: 50%;
-    overflow: hidden;
 }
 
 .crop {
@@ -294,4 +231,8 @@ footer a:focus {
 
 .modal-content {
     background-color: rgba(0,0,0,0);
+}
+
+.img-fluid-2 {
+    width: 30%;
 }

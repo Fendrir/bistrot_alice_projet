@@ -71,7 +71,7 @@ if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickS
         while ($row = $result->fetch_assoc()) {
             ?>
             <div class="<?= $globalDivTitle; ?>Div divToHide whiteDiv hidden border row mb-3">
-                <div class="col-7 align-self-center mt-3">
+                <div class="col-md-7 align-self-center mt-3">
                     <h4><?= $titleDiv . ' ' . $i; ?> - <i><?= $row[$title] ?></i></h4>
                     <form class="mt-3" method="post" action="<?= $uploadURL . '&id=' . $i; ?>"
                           enctype="multipart/form-data">
@@ -81,7 +81,7 @@ if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickS
                         <button class="button_admin btn btn-info" type="submit">Envoyer</button>
                     </form>
                 </div>
-                <div class="col-5 align-self-center mt-3 mb-3">
+                <div class="col-md-5 align-self-center mt-3 mb-3">
                     <img class="taille img-fluid myImg" src="<?= $row[$img] ?>" alt="<?= $row[$title] ?>"/>
                 </div>
             </div>
