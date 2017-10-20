@@ -51,10 +51,10 @@ function identifiers($server = 'localhost', $user = 'root', $pwd = 'admin', $db 
                 </div>
             </div>
             <div class="col-md text-center d-none d-md-block">
-                <img class="img-fluid" src="images/FaitMaison.png"/>
+                <img class="img-fluid" src="images fixes/FaitMaison.png"/>
             </div>
             <div class="col-md text-center d-block d-sm-block d-md-none  mt-2">
-                <img class="img-fluid-2" src="images/FaitMaison.png"/>
+                <img class="img-fluid-2" src="images fixes/FaitMaison.png"/>
             </div>
             <!--            <div class="row justify-content-center">-->
             <!--                <div class="col-auto">-->
