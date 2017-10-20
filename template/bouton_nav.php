@@ -6,8 +6,8 @@ if(!isset($_SESSION['nick']) || $_SESSION['nick'] !== 'Franck') {
 }
 if($_SESSION['nick'] === 'Franck'){
     //Si l'admin est co les boutons s'affichent
-    $boutons = '<a id="administration" class="menuButtonAdmin" href="?p=administration"><li class="align-self-center">Administration</li></a>
-                <a id="deconnexion"  class="menuButtonDeco" href="?p=deconnexion"><li class="align-self-center">Se déconnecter</li></a>';
+    $boutons = '<a id="administration" class="menuButtonAdmin mt-2" href="?p=administration"><li class="align-self-center">Administration</li></a>
+                <a id="deconnexion"  class="menuButtonDeco mt-2" href="?p=deconnexion"><li class="align-self-center">Se déconnecter</li></a>';
 
 }
 
@@ -37,8 +37,8 @@ function identifiers($server = 'localhost', $user = 'root', $pwd = 'admin', $db 
         <div class="container-fluid whiteDiv whiteDivNoTop p-3 mb-4">
             <div class="col">
                 <ul class="navbar-nav row">
-                    <a id="home" class="menuButton" href="?p=home"><li class="align-self-center">Accueil</li></a>
-                    <a id="contact" class="menuButton" href="?p=contact"><li class="align-self-center">Contact</li></a>
+                    <a id="home" class="menuButton mt-2" href="?p=home"><li class="align-self-center">Accueil</li></a>
+                    <a id="contact" class="menuButton mt-2" href="?p=contact"><li class="align-self-center">Contact</li></a>
                     <!--                        <li class="nav-item"><a class="nav-link" href="?p=connexion">Connexion</a></li>-->
                     <?php echo $boutons; ?>
                 </ul>
