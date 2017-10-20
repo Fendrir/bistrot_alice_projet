@@ -14,6 +14,16 @@ body {
     src: url("../Police/Copperplate.ttc");
 }
 
+.lobster {
+    font-family: 'Lobster', cursive;
+}
+
+@font-face
+{
+    font-family: "Lobster";
+    src: url("../Police/Lobster 1.4.otf");
+}
+
 a, a:active, a:visited {
     color: #A22335;
     text-decoration: none;
