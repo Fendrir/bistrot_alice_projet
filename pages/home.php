@@ -21,7 +21,7 @@ function img($num = 1, $id = 1, $table = 'plat', $data1 = 'pla_img', $data2 = 'p
     $result2 = $conn->query($sql2);
     while ($row = $result->fetch_assoc()) {
         if($table === 'events_restau'){
-            echo '<img class="align-middle banEvent events img-fluid " src="' . $row[$data1] . '"';
+            echo '<img class="banEvent events img-fluid" src="' . $row[$data1] . '"';
             while ($row2 = $result2->fetch_assoc()) {
                 echo 'alt="' . $row2[$data2] . '">';
             }
@@ -79,46 +79,46 @@ function video($server = 'localhost', $user = 'root', $pwd = 'admin', $db = 'bis
 <div class="col-md text-center">
     <div class="col whiteDiv">
         <div class="row">
-        <!-- image lien sur le caroussel -->
-        <?php
-        identifierBan();
-        ?>
-    </div>
-        <div class="row">
-            <div class="mt-4 hidden text-center cropBan" id="events">
+            <div class="col p-0">
+                 <!-- image lien sur le caroussel -->
+                <?php
+                identifierBan();
+                ?>
+            </div>
+        </div>
+        <div class="row p-0">
+            <div class="col p-0 mt-4 hidden text-center" id="events">
             <?php img( 1, 'banEvents', 'events_restau', 'eve_img', 'eve_alt', 'eve_oid', 'events' ); ?>
-        </div>
+            </div>
         </div>
         <div class="row">
-            <div class="row">
-                <div class="col-md-8 mt-4">
-                    <div class="row">
-                        <div class="col-md-6 crop">
+            <div class="col-md-8 mt-4 p-0 p-md-1">
+                <div class="row">
+                    <div class="col-md-6 crop">
                     <?php img(1, 1); ?>
                 </div>
-                        <div class="col-md-6 mt-md-0 mt-4 crop">
+                    <div class="col-md-6 mt-md-0 mt-4 crop">
                     <?php img(2, 2); ?>
                 </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 text-center mt-4">
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center mt-4">
                     <?php video(); ?>
                 </div>
-                    </div>
                 </div>
-                <div class="col-md">
-                    <div class="col-12 mt-2">
-                        <div class="whiteDiv row text-center border p-2">
+            </div>
+            <div class="col-md p-0 p-md-1 ml-md-3">
+                <div class="col mt-2">
+                    <div class="whiteDiv row border text-center pt-3 pb-0">
                         <?php
                         presentation();
                         ?>
                     </div>
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col-md-12 crop">
-                    <?php img(3, 3); ?>
                 </div>
-                    </div>
+                <div class="row mt-3 mt-md-2">
+                    <div class="col-md-12 crop">
+                    <?php img(3, 3); ?>
+                        </div>
                 </div>
             </div>
         </div>
