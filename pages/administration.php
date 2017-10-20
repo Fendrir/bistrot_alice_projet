@@ -28,7 +28,7 @@ if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickS
                         <input class="btn btn-info" type="file" name="banEvent" id="content" required/><br>
                         <h5 class="mt-3">Image de l'évènement</h5>
                         <input class="btn btn-info" type="file" name="image" id="content" required/><br>
-                        <input class="form-group mt-3 text-center inputName" type="text" name="titre" id="titre" placeholder="Nom de l'évènement" autocomplete="off"><br>
+                        <input class="form-group mt-3 text-center inputName" maxlength="50" type="text" name="titre" id="titre" placeholder="Nom de l'évènement" autocomplete="off"><br>
                         <button class="btn btn-info button_admin form-group" type="submit">Envoyer</button>
                     </form>
                     <form id="buttonDeleteEvent" class="hidden" action="?p=delete_event&id=1" method="post">
@@ -77,7 +77,7 @@ if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickS
                           enctype="multipart/form-data">
                         <h5 class="mb-2"><?= $titleInputFile; ?></h5>
                         <input class="btn btn-info" type="file" name="image" required/><br>
-                        <input class="form-group mt-3 text-center inputName" type="text" name="titre" id="titre" placeholder="<?= $titleInput; ?>" autocomplete="off"><br>
+                        <input class="form-group mt-3 text-center inputName" maxlength="50" type="text" name="titre" id="titre" placeholder="<?= $titleInput; ?>" autocomplete="off"><br>
                         <button class="button_admin btn btn-info" type="submit">Envoyer</button>
                     </form>
                 </div>
@@ -100,7 +100,7 @@ if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickS
                 <div class="col-md-6 align-self-center">
                     <h4>Vidéo</h4>
                     <form class="mt-3" method="post" action="?p=upload_video">
-                        <input class="form-group inputName text-center" id="videoLink" name="videoLink" type="text" placeholder="ID de la vidéo" required><br>
+                        <input class="form-group inputName text-center" maxlength="50" id="videoLink" name="videoLink" type="text" placeholder="ID de la vidéo" required><br>
                         <button class="button_admin btn btn-info" type="submit">Envoyer</button>
                     </form>
                 </div>
@@ -123,7 +123,7 @@ if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickS
                 <div class="col-12">
                     <form class="mt-3" method="post" action="?p=upload_prez">
                         <h5><label for="prezTitle"></label></h5>
-                        <input class="form-group inputName text-center" type="text" id="prezTitle" name="prezTitle" placeholder="Titre de présentation (optionnel)">
+                        <input class="form-group inputName text-center" maxlength="50" type="text" id="prezTitle" name="prezTitle" placeholder="Titre de présentation (optionnel)">
                         <h5 for="prezContent">Texte de présentation</h5>
                         <textarea class="form-group inputName texteAreaAdmin" id="prezContent" name="prezContent" rows="10" required><?= $row['pre_content'] ?></textarea>
                         <button class="button_admin btn btn-info mt-3" type="submit">Envoyer</button>
