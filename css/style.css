@@ -4,14 +4,15 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    font-family: 'Copperplate', serif;
+    font-family: 'Copperplate';
     margin: 0;
 }
 
 @font-face
 {
     font-family: "Copperplate";
-    src: url("../Police/Copperplate.ttc");
+    font-style: normal;
+    src: url("../Police/Copperplate.woff");
 }
 
 .lobster {
