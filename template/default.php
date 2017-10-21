@@ -18,7 +18,7 @@
 <!-- Image Modal Part -->
 <div id="myModal" class="modal2 closeImg">
     <img id="imgModal" class="modal-content2">
-    <div id="caption"></div>
+    <div id="caption" class="lobster"></div>
 </div>
 <!-- FIN Image Modal Part -->
 

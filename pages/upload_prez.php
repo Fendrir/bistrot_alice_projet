@@ -25,7 +25,7 @@ if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickS
         <div class="mt-3">
             <p><?= $prezContent ?></p>
         </div>
-        <div class="mt-3 mb-3">
+        <div class="mt-3">
             <a href="?p=administration&div=buttonPrezDiv">
                 <button class="btn btn-info">Retour à la page d'administration</button>
             </a>
