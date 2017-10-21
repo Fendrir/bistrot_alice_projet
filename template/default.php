@@ -41,4 +41,5 @@
 <script src="../bistrot_alice_projet/js/imageModal.js"></script>
 <script src="../bistrot_alice_projet/js/app.js"></script>
 </body>
+<!-- ©Simplon.co @ Carcassonne 2017, Julien Isabelle et Nicolas -->
 </html>
