@@ -1,4 +1,4 @@
-<div class="col align-self-center">
+<div class="col">
     <div class="col">
         <div class="row whiteDiv">
             <div class="col-md-7 align-self-center text-center">

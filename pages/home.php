@@ -77,7 +77,7 @@ function video($server = 'localhost', $user = 'root', $pwd = 'admin', $db = 'bis
 ?>
 
 <div class="col-md text-center">
-    <div class="col whiteDiv">
+    <div class="col pt-2 pt-md-4 pb-2 pb-md-4 whiteDiv">
         <div class="row">
             <div class="col p-0">
                  <!-- image lien sur le caroussel -->
@@ -109,7 +109,7 @@ function video($server = 'localhost', $user = 'root', $pwd = 'admin', $db = 'bis
             </div>
             <div class="col-md p-0 p-md-1 ml-md-3">
                 <div class="col mt-2">
-                    <div class="whiteDiv row border text-center pt-3 pb-0">
+                    <div class="whiteDiv noRad row border text-center pt-3 pb-0">
                         <?php
                         presentation();
                         ?>

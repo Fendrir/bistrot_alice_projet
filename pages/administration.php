@@ -100,7 +100,7 @@ if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickS
                 <div class="col-md-6 align-self-center">
                     <h4>Vidéo</h4>
                     <form class="mt-3" method="post" action="?p=upload_video">
-                        <input class="form-group inputName text-center" maxlength="50" id="videoLink" name="videoLink" type="text" placeholder="ID de la vidéo" required><br>
+                        <input class="form-group inputName text-center" maxlength="50"id="videoLink" name="videoLink" type="text" placeholder="ID de la vidéo" required><br>
                         <button class="button_admin btn btn-info" type="submit">Envoyer</button>
                     </form>
                 </div>
@@ -123,7 +123,9 @@ if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickS
                 <div class="col-12">
                     <form class="mt-3" method="post" action="?p=upload_prez">
                         <h5><label for="prezTitle"></label></h5>
-                        <input class="form-group inputName text-center" maxlength="50" type="text" id="prezTitle" name="prezTitle" placeholder="Titre de présentation (optionnel)">
+                        <input class="form-group inputName text-center" type="text" id="prezTitle" name="prezTitle"
+                               <? if(!empty($row['pre_title'])){ echo 'value="'.$row['pre_title'].'"'; } ?>
+                               placeholder="Titre de présentation (optionnel)">
                         <h5 for="prezContent">Texte de présentation</h5>
                         <textarea class="form-group inputName texteAreaAdmin" id="prezContent" name="prezContent" rows="10" required><?= $row['pre_content'] ?></textarea>
                         <button class="button_admin btn btn-info mt-3" type="submit">Envoyer</button>
@@ -137,20 +139,20 @@ if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickS
 }
 ?>
 
-<div class="col-9 text-center">
-    <div class="row">
-        <div class="col-12">
-
-            <ul class="list-inline buttons-administration">
-                <li class="list-inline-item mt-3"><button id="buttonEvent" class="btn btn-info">Evènements</button></li>
-                <li class="list-inline-item mt-3"><button id="buttonVideo" class="btn btn-info">Vidéo</button></li>
-                <li class="list-inline-item mt-3"><button id="buttonCarte" class="btn btn-info">Cartes</button></li>
-                <li class="list-inline-item mt-3"><button id="buttonPlat" class="btn btn-info">Plats</button></li>
-                <li class="list-inline-item mt-3"><button id="buttonDivers" class="btn btn-info">Divers</button></li>
-                <li class="list-inline-item mt-3"><button id="buttonPrez" class="btn btn-info">Présentation</button></li>
-            </ul>
-        </div>
-        <div class="col-12">
+<div class="col-md text-center">
+    <div class="col">
+        <div class="row">
+            <div class="col-12">
+                <ul class="list-inline buttons-administration">
+                    <li class="list-inline-item mt-3"><button id="buttonEvent" class="btn btn-info">Evènements</button></li>
+                    <li class="list-inline-item mt-3"><button id="buttonVideo" class="btn btn-info">Vidéo</button></li>
+                    <li class="list-inline-item mt-3"><button id="buttonCarte" class="btn btn-info">Cartes</button></li>
+                    <li class="list-inline-item mt-3"><button id="buttonPlat" class="btn btn-info">Plats</button></li>
+                    <li class="list-inline-item mt-3"><button id="buttonDivers" class="btn btn-info">Divers</button></li>
+                    <li class="list-inline-item mt-3"><button id="buttonPrez" class="btn btn-info">Présentation</button></li>
+                </ul>
+            </div>
+            <div class="col-12">
         <?php
         banEvent(); // GESTION DES EVENTS
         video();    // GESTION DE LA VIDEO
@@ -161,6 +163,7 @@ if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickS
             'Divers', 'Image', 'Titre de l\'image', '?p=upload_identifiers');    // GESTION DES DIVERS
         presentation();
             ?>
+        </div>
         </div>
     </div>
 </div>

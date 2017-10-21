@@ -89,6 +89,7 @@ input {
     width: 80%;
 }
 
+
 .whiteDiv {
     border-radius: 5px;
     background-color: rgba(255,255,255, 0.75);
@@ -97,7 +98,9 @@ input {
     letter-spacing: 0.1px;
     font-size: 14.5px;
 }
-
+.noRad {
+    border-radius: 0px;
+}
 .whiteDivNoTop {
     border-radius: 0 0 5px 5px;
 }
