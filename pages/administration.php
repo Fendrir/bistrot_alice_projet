@@ -123,9 +123,9 @@ if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickS
                 <div class="col-12">
                     <form class="mt-3" method="post" action="?p=upload_prez">
                         <h5><label for="prezTitle"></label></h5>
-                        <input class="form-group inputName text-center" type="text" id="prezTitle" name="prezTitle"
+                        <input class="form-group inputName text-center" type="text" id="prezTitle" name="prezTitle"  placeholder="Titre de présentation (optionnel)">
                                <? if(!empty($row['pre_title'])){ echo 'value="'.$row['pre_title'].'"'; } ?>
-                               placeholder="Titre de présentation (optionnel)">
+                              
                         <h5 for="prezContent">Texte de présentation</h5>
                         <textarea class="form-group inputName texteAreaAdmin" id="prezContent" name="prezContent" rows="10" required><?= $row['pre_content'] ?></textarea>
                         <button class="button_admin btn btn-info mt-3" type="submit">Envoyer</button>
