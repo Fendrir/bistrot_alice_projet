@@ -12,41 +12,43 @@ ob_start();
 if($p === 'home'){
     include('pages/home.php');
 }
-if($p === 'connexion'){
+elseif($p === 'connexion'){
     include('pages/connexion.php');
 }
-if($p === 'admin'){
+elseif($p === 'admin'){
     include('pages/admin.php');
 }
-if($p === 'administration'){
+elseif($p === 'administration'){
     include('pages/administration.php');
 }
-if($p === 'deconnexion'){
+elseif($p === 'deconnexion'){
     include('pages/deconnexion.php');
 }
-if($p === 'upload'){
+elseif($p === 'upload'){
     include('pages/upload.php');
 }
-if($p === 'uploadevent'){
+elseif($p === 'uploadevent'){
     include('pages/uploadevent.php');
 }
-if($p === 'delete_event'){
+elseif($p === 'delete_event'){
     include('pages/delete_event.php');
 }
-if($p === 'upload_plat'){
+elseif($p === 'upload_plat'){
     include('pages/upload_plat.php');
 }
-if($p === 'upload_video'){
+elseif($p === 'upload_video'){
     include('pages/upload_video.php');
 }
-if($p === 'upload_prez'){
+elseif($p === 'upload_prez'){
     include('pages/upload_prez.php');
 }
-if($p === 'upload_identifiers'){
+elseif($p === 'upload_identifiers'){
     include('pages/upload_identifiers.php');
 }
-if($p === 'contact'){
+elseif($p === 'contact'){
     include('pages/contact.php');
+} else  {
+    include('pages/erreur.php');
 }
 $content = ob_get_clean();
 include('template/default.php');
