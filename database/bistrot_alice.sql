@@ -84,6 +84,17 @@ create table video
 )
 ;
 
+CREATE TABLE stats_visites
+(
+    ip VARCHAR(30) NOT NULL,
+    date_visite DATE NOT NULL,
+    pages_vues SMALLINT(5) UNSIGNED NOT NULL,
+    PRIMARY KEY (ip, date_visite)
+)
+COLLATE='utf8_general_ci'
+ENGINE=MyISAM
+;
+
 insert into carte (car_oid) VALUES (1);
 insert into carte (car_oid) VALUES (2);
 insert into carte (car_oid) VALUES (3);
