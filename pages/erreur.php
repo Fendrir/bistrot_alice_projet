@@ -1,3 +1,4 @@
+<!-- Page d'erreur en cas de problème de lien -->
 <div class="col-md text-center">
     <div class="col whiteDiv">
             <h1>Erreur !</h1>

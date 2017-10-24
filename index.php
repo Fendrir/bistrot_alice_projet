@@ -1,13 +1,16 @@
 <?php
 session_start();
+//Connexion à la DB
 include('database/connect_bdd.php');
 
+//Set de $p par défaut pour afficher l'index
 if(htmlspecialchars(isset($_GET['p']), ENT_QUOTES)){
     $p = htmlspecialchars($_GET['p'], ENT_QUOTES);
 }else{
     $p = 'home';
 }
 
+//Mise en cache des pages
 ob_start();
 if($p === 'home'){
     include('pages/home.php');
@@ -50,8 +53,10 @@ elseif($p === 'contact'){
 } else  {
     include('pages/erreur.php');
 }
+//stockage du include dans $content
 $content = ob_get_clean();
+//Include du template
 include('template/default.php');
+//Fermeture de la connexion à la DB
 mysqli_close($conn);
-
 ?>
