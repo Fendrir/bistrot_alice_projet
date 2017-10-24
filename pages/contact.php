@@ -1,6 +1,7 @@
+<!-- Chaque ligne contient son icone et son texte pour l'alignement de ces derniers entre eux -->
 <div class="col">
-    <div class="col">
-        <div class="row whiteDiv">
+    <div class="col whiteDiv">
+        <div class="row">
             <div class="col-md-7 align-self-center text-center">
                 <h1>Le Bistrot d'Alice</h1>
                 <ul class="list-unstyled">

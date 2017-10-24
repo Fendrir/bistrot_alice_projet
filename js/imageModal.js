@@ -1,44 +1,32 @@
-//Click on stuff with .myImg class will launch the function
+//Lors d'un click sur une image (ici, pour la bannière d'event en particulier)
 $('img').click(function(){
-    if($(this).hasClass('myImg')){
-        //Showing the block with .myModal id
+    //Si l'image a la class .events
+    if ($(this).hasClass('events')){
+        // Pop du modal
         $('#myModal').css("display", "block");
-        //Setting the #imgModal source with the source of block we just clicked + Caption
-        $('#imgModal').attr('src', $(this).attr('src'));
-        $('#caption').html($(this).attr("alt"));
-    } else if ($(this).hasClass('events')){
-        // Showing the block with .myModal id
-        $('#myModal').css("display", "block");
-        //Setting the #imgModal source with the source of block we just clicked
+        // Récupération de l'image via le alt
         $('#imgModal').attr('src', $(this).attr('alt'));
-        //Getting the alt of block we clicked to push it in block with .caption class
+        // Reset du sous-titre de l'image
+        $('#caption').html('');
     }
 });
 
+//Lors d'un click sur une image de plat
 $('.hvrbox').click(function(){
+    //Variable qui cible <img> dans <div> dans <div .hvrbox>
     var image = $(this).children('div').children('img');
-    console.log(image)
+    //Si l'img a la class .myImg
     if(image.hasClass('myImg')){
-        //Showing the block with .myModal id
+        // Pop du modal
         $('#myModal').css("display", "block");
-        //Setting the #imgModal source with the source of block we just clicked + Caption
+        // Affichage de l'image
         $('#imgModal').attr('src', image.attr('src'));
+        // Affichage du nom du plat dans le sous-titre de l'image
         $('#caption').html(image.attr("alt"));
-    } else if (image.hasClass('events')){
-        // Showing the block with .myModal id
-        $('#myModal').css("display", "block");
-        //Setting the #imgModal source with the source of block we just clicked
-        $('#imgModal').attr('src', image.attr('alt'));
-        //Getting the alt of block we clicked to push it in block with .caption class
     }
 });
 
-//When clicking on block with .close class, launch the function
-//P.s : it's .closeImg because if you use bootstraps (and maybe other frameworks)
-//There's already a .close class
+// Fermeture du modal lors d'un clic sur l'écran (sur la div globale du modal)
 $('.closeImg').click(function () {
-    //Hiding the block with .myModal class
     $('#myModal').css("display", "none");
 });
-
-//You can eventually put the whole code in a function :)
