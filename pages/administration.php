@@ -139,6 +139,7 @@ if(htmlspecialchars(!isset($nickSession), ENT_QUOTES) || htmlspecialchars($nickS
                 <div class="col-12">
                     <form class="mt-3" method="post" action="?p=upload_prez">
                         <h5><label for="prezTitle"></label></h5>
+
                         <input class="form-group inputName text-center" type="text" id="prezTitle" name="prezTitle"
                             <? if(!empty($row['pre_title'])){ echo 'value="'.$row['pre_title'].'"'; } ?>
                                placeholder="Titre de présentation (optionnel)">
