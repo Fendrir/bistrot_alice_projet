@@ -59,7 +59,7 @@ function imgCarrousel($num = 1, $table = 'carte', $data1 = 'car_img', $data2 = '
     $sql = "SELECT $data1, $data2 FROM $table WHERE $tableid = $num";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
-        echo '<img class="d-block text-center img-fluid" src="' . $row[$data1] . '" alt="' . $row[$data2] . '">';
+        echo '<img class="text-center img-fluid" src="' . $row[$data1] . '" alt="' . $row[$data2] . '">';
     }
 }
 
@@ -158,40 +158,18 @@ function video($server = 'localhost', $user = 'root', $pwd = 'admin', $db = 'bis
 <div class="modal fade carte-menu-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content" data-dismiss="modal">
-            <!-- Caroussel -->
             <div class="row">
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item active">
-                        <!-- num = numéro de l'image, voir la fonction associée -->
-                            <?php imgCarrousel(1); ?>
-                        </div>
-                        <div class="carousel-item">
-                                <?php imgCarrousel(2); ?>
-                            </div>
-                        <div class="carousel-item">
-                                <?php imgCarrousel(3); ?>
-                            </div>
-                    </div>
+                <div class="col-md-12">
+                     <!-- num = numéro de l'image, voir la fonction associée -->
+                    <?php imgCarrousel(1); ?>
+                </div>
+                <div class="col-md-12 mt-2">
+                    <?php imgCarrousel(2); ?>
+                </div>
+                <div class="col-md-12 mt-2">
+                    <?php imgCarrousel(3); ?>
                 </div>
             </div>
-        </div>
-        <div class="col-12 mt-3">
-            <!-- Boutons gauche/droite du carrousel -->
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-            <!-- FIN Boutons gauche/droite du carrousel -->
         </div>
     </div>
     <!--Fin Modal-->
